@@ -38,3 +38,8 @@ A `Bus.SendToSites` and a `Bus.Reply`.
 # TODO
 
 * Messages sent to the error queue and replayed in a diff version
+
+
+#To update
+
+Update-Package NServiceBus -Safe
