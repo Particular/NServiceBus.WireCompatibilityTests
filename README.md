@@ -1,2 +1,2 @@
 # WireCompatTests.Msmq
-Tests to unsure wire compatibility between versions of NServiceBus for the MSMQ Transport
+Tests to ensure wire compatibility between versions of NServiceBus for the MSMQ Transport
