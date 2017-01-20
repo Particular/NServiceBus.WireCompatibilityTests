@@ -84,28 +84,68 @@
     <Compile Include="..\Common\SendReturn\SendReturnVerifier.cs">
       <Link>SendReturn\SendReturnVerifier.cs</Link>
     </Compile>
-    <Compile Include="DataBus\DataBusInitiator.cs" />
-    <Compile Include="DataBus\ResponseHandler.cs" />
-    <Compile Include="DataBus\SendHandler.cs" />
-    <Compile Include="EncryptionVerifier.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="PubSub\EventHandler.cs" />
-    <Compile Include="PubSub\PubSubConfigOverride.cs" />
-    <Compile Include="PubSub\PubSubInitiator.cs" />
-    <Compile Include="Saga\RequestingSaga.cs" />
-    <Compile Include="Saga\RequestingSagaData.cs" />
-    <Compile Include="Saga\RespondingSaga.cs" />
-    <Compile Include="Saga\RespondingSagaData.cs" />
-    <Compile Include="Saga\SagaInitiator.cs" />
-    <Compile Include="SendReply\FirstHandler.cs" />
-    <Compile Include="SendReply\SecondHandler.cs" />
-    <Compile Include="SendReply\SendReplyInitiator.cs" />
-    <Compile Include="SendReturn\Handler.cs" />
-    <Compile Include="SendReturn\SendReturnInitiator.cs" />
-    <Compile Include="TestRunner.cs" />
+    <Compile Include="..\Version_6_0\DataBus\DataBusInitiator.cs">
+      <Link>DataBus\DataBusInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\DataBus\ResponseHandler.cs">
+      <Link>DataBus\ResponseHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\DataBus\SendHandler.cs">
+      <Link>DataBus\SendHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\EncryptionVerifier.cs">
+      <Link>EncryptionVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\PubSub\EventHandler.cs">
+      <Link>PubSub\EventHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\PubSub\PubSubConfigOverride.cs">
+      <Link>PubSub\PubSubConfigOverride.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\PubSub\PubSubInitiator.cs">
+      <Link>PubSub\PubSubInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Saga\RequestingSaga.cs">
+      <Link>Saga\RequestingSaga.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Saga\RequestingSagaData.cs">
+      <Link>Saga\RequestingSagaData.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Saga\RespondingSaga.cs">
+      <Link>Saga\RespondingSaga.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Saga\RespondingSagaData.cs">
+      <Link>Saga\RespondingSagaData.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\Saga\SagaInitiator.cs">
+      <Link>Saga\SagaInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\SendReply\FirstHandler.cs">
+      <Link>SendReply\FirstHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\SendReply\SecondHandler.cs">
+      <Link>SendReply\SecondHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\SendReply\SendReplyInitiator.cs">
+      <Link>SendReply\SendReplyInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\SendReturn\Handler.cs">
+      <Link>SendReturn\Handler.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\SendReturn\SendReturnInitiator.cs">
+      <Link>SendReturn\SendReturnInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_6_0\TestRunner.cs">
+      <Link>TestRunner.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="..\Version_6_0\App.config">
+      <Link>App.config</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

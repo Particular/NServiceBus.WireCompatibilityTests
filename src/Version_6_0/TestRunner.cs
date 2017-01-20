@@ -13,7 +13,7 @@ public static class TestRunner
         await bus.InitiatePubSub().ConfigureAwait(false);
         await bus.InitiateSaga().ConfigureAwait(false);
         await bus.InitiateSendReply().ConfigureAwait(false);
-        await bus.InitiateSendReturn().ConfigureAwait(false);
+        bus.InitiateSendReturn();
 
         await Task.Delay(TimeSpan.FromMinutes(1)).ConfigureAwait(false);
         await bus.Stop().ConfigureAwait(false);

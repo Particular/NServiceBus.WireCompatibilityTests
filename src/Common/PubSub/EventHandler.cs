@@ -65,10 +65,12 @@ public class EventHandler :
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
     }
+
     public void Handle(Version_5_1.Messages.MyEvent message)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
     }
+
     public void Handle(Version_5_2.Messages.MyEvent message)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
