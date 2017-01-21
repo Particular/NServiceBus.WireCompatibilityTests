@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {
+    "log4net": "1.2.10",
+    "NServiceBus": "3.*",
+    "NServiceBus.Interfaces": "3.*"
+  },
+  "frameworks": {
+    "net452": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

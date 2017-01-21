@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "NServiceBus/5.1.9": {
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/NServiceBus.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NServiceBus.Core.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "NServiceBus/5.1.9": {
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/NServiceBus.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/NServiceBus.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NServiceBus/5.1.9": {
+      "sha512": "/lRNJFVsWzTcsPUPjoW37tb+Vb5kzd+Rt/hvS+SnKP+okEEmtplEmLepxX+idIG1jbBugW2WvQWrMRjPV5H9hA==",
+      "type": "package",
+      "path": "nservicebus/5.1.9",
+      "files": [
+        "NServiceBus.5.1.9.nupkg.sha512",
+        "NServiceBus.nuspec",
+        "lib/net45/NServiceBus.Core.dll",
+        "lib/net45/NServiceBus.Core.pdb",
+        "lib/net45/NServiceBus.Core.xml",
+        "tools/NServiceBus.PowerShell.Development.dll",
+        "tools/about_NServiceBus.help.txt",
+        "tools/init.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "NServiceBus >= 5.1.9"
+    ],
+    ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\Users\\simon\\.nuget\\packages\\": {}
+  }
+}

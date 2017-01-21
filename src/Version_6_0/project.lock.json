@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {
+      "NServiceBus/6.0.6": {
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net452/NServiceBus.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net452/NServiceBus.Core.dll": {}
+        }
+      },
+      "NServiceBus.Callbacks/1.1.0": {
+        "dependencies": {
+          "NServiceBus": "[6.0.0, 7.0.0)"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net452/NServiceBus.Callbacks.dll": {}
+        },
+        "runtime": {
+          "lib/net452/NServiceBus.Callbacks.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win": {
+      "NServiceBus/6.0.6": {
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net452/NServiceBus.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net452/NServiceBus.Core.dll": {}
+        }
+      },
+      "NServiceBus.Callbacks/1.1.0": {
+        "dependencies": {
+          "NServiceBus": "[6.0.0, 7.0.0)"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net452/NServiceBus.Callbacks.dll": {}
+        },
+        "runtime": {
+          "lib/net452/NServiceBus.Callbacks.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NServiceBus/6.0.6": {
+      "sha512": "LlgQuDJDPFen5WwpWX8/Vj8+OMJsswyg19nlSI7BxxB5O3dNPluVfXR8AN9ZbTv4u4t9WyKCuU4EypJGGVAqOA==",
+      "type": "package",
+      "path": "nservicebus/6.0.6",
+      "files": [
+        "lib/net452/NServiceBus.Core.dll",
+        "lib/net452/NServiceBus.Core.pdb",
+        "lib/net452/NServiceBus.Core.xml",
+        "nservicebus.6.0.6.nupkg.sha512",
+        "nservicebus.nuspec",
+        "tools/init.ps1"
+      ]
+    },
+    "NServiceBus.Callbacks/1.1.0": {
+      "sha512": "UjLoLsYp/wApIlAz/5nCHK2aTe7ARubb+RvX9EJyx7T9TveNQigGK/HN6qHZoBeBgMFDd0AUsu+Un+cS57wy7A==",
+      "type": "package",
+      "path": "nservicebus.callbacks/1.1.0",
+      "files": [
+        "lib/net452/NServiceBus.Callbacks.dll",
+        "lib/net452/NServiceBus.Callbacks.pdb",
+        "lib/net452/NServiceBus.Callbacks.xml",
+        "nservicebus.callbacks.1.1.0.nupkg.sha512",
+        "nservicebus.callbacks.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "NServiceBus >= 6.0.6",
+      "NServiceBus.Callbacks >= 1.1.0"
+    ],
+    ".NETFramework,Version=v4.5.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\simon\\.nuget\\packages\\": {}
+  }
+}
