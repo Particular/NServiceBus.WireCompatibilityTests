@@ -9,7 +9,7 @@
     "NServiceBus.Interfaces": "3.3.*"
   },
   "frameworks": {
-    "net45": {}
+    "net462": {}
   },
   "runtimes": {
     "win": {}

@@ -3,7 +3,7 @@
     "NServiceBus": "5.2.*"
   },
   "frameworks": {
-    "net45": {}
+    "net462": {}
   },
   "runtimes": {
     "win": {}

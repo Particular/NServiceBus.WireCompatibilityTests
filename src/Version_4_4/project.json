@@ -5,7 +5,7 @@
     "NServiceBus.Interfaces": "4.4.*"
   },
   "frameworks": {
-    "net45": {}
+    "net462": {}
   },
   "runtimes": {
     "win": {}
