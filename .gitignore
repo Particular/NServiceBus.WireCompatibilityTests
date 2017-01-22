@@ -41,6 +41,7 @@ installer/ServiceControl-cache
 # User-specific files
 *.suo
 *.user
+*.lock.json
 *.userosscache
 *.sln.docstates
 .vs/
