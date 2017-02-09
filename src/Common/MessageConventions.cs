@@ -14,7 +14,7 @@ public static class MessageConventions
         configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 
-#elif(Version5 || Version6)
+#elif(Version5)
 
     public static void ApplyMessageConventions(this ConventionsBuilder b)
     {
@@ -22,6 +22,16 @@ public static class MessageConventions
         b.DefiningEventsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Event"));
         b.DefiningMessagesAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Message"));
         b.DefiningEncryptedPropertiesAs(p => p.Name.StartsWith("Encrypted"));
+        b.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
+    }
+
+#elif(Version6)
+
+    public static void ApplyMessageConventions(this ConventionsBuilder b)
+    {
+        b.DefiningCommandsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Command"));
+        b.DefiningEventsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Event"));
+        b.DefiningMessagesAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Message"));
         b.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 

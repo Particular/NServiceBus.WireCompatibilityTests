@@ -25,7 +25,9 @@ class Program
     static Task<IEndpointInstance> CreateBus()
     {
         var endpointConfiguration = new EndpointConfiguration(endpointName);
-        endpointConfiguration.Conventions().ApplyMessageConventions();
+        var conventions = endpointConfiguration.Conventions();
+        conventions.ApplyMessageConventions();
+
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
         var recoverabilitySettings = endpointConfiguration.Recoverability();
@@ -35,8 +37,7 @@ class Program
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
-        var encryptionKey = Encoding.ASCII.GetBytes("gdDbqRpqdRbTs3mhdZh9qCaDaxJXl+e6");
-        endpointConfiguration.RijndaelEncryptionService("20151014", encryptionKey, new List<byte[]>{ encryptionKey });
+        ConfigureEncryption(endpointConfiguration);
 
         endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
 
@@ -51,5 +52,32 @@ class Program
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);
+    }
+
+    static void ConfigureEncryption(EndpointConfiguration endpointConfiguration)
+    {
+        var encryptionKey = Encoding.ASCII.GetBytes("gdDbqRpqdRbTs3mhdZh9qCaDaxJXl+e6");
+        var decryptionKeys = new List<byte[]>
+        {
+            encryptionKey
+        };
+        var keyIdentifier = "20151014";
+
+#if (UseExternalEncryption)
+        var keys = new Dictionary<string, byte[]>
+        {
+            {keyIdentifier, encryptionKey}
+        };
+        var encryptionService = new NServiceBus.Encryption.MessageProperty.RijndaelEncryptionService(keyIdentifier, keys, decryptionKeys);
+
+        NServiceBus.Encryption.MessageProperty.EncryptionConfigurationExtensions.EnableMessagePropertyEncryption(
+            configuration: endpointConfiguration,
+            encryptionService: encryptionService,
+            encryptedPropertyConvention: p => p.Name.StartsWith("Encrypted"));
+#else
+        var conventions = endpointConfiguration.Conventions();
+        conventions.DefiningEncryptedPropertiesAs(p => p.Name.StartsWith("Encrypted"));
+        endpointConfiguration.RijndaelEncryptionService(keyIdentifier, encryptionKey, decryptionKeys);
+#endif
     }
 }
