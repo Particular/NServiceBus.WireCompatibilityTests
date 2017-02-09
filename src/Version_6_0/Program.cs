@@ -34,6 +34,8 @@ class Program
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         endpointConfiguration.RijndaelEncryptionService();
         endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
+
+        // Required by callbacks to have each instance uniquely addressable
         endpointConfiguration.MakeInstanceUniquelyAddressable("1");
 
         endpointConfiguration.RegisterComponents(
