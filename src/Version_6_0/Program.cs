@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
 
@@ -32,7 +34,10 @@ class Program
 #pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
-        endpointConfiguration.RijndaelEncryptionService();
+
+        var encryptionKey = Encoding.ASCII.GetBytes("gdDbqRpqdRbTs3mhdZh9qCaDaxJXl+e6");
+        endpointConfiguration.RijndaelEncryptionService("20151014", encryptionKey, new List<byte[]>{ encryptionKey });
+
         endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
 
         // Required by callbacks to have each instance uniquely addressable
