@@ -11,8 +11,8 @@ public class PubSubConfigOverride : IProvideConfiguration<UnicastBusConfig>
             var assemblyName = endpointName.Replace("WireCompat","");
             var mapping = new MessageEndpointMapping
                 {
-                    Messages = assemblyName + ".Messages",
-                    TypeFullName = assemblyName + ".Messages.MyEvent",
+                    Messages = $"{assemblyName}.Messages",
+                    TypeFullName = $"{assemblyName}.Messages.MyEvent",
                     Endpoint = endpointName
                 };
             messageEndpointMappingCollection.Add(mapping);

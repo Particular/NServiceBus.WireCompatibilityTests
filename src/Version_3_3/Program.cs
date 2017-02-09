@@ -6,7 +6,7 @@ using NServiceBus.Unicast;
 
 class Program
 {
-    static string endpointName = "WireCompat" + Assembly.GetExecutingAssembly().GetName().Name;
+    static string endpointName = $"WireCompat{Assembly.GetExecutingAssembly().GetName().Name}";
     static void Main()
     {
         //HACK: for trial dialog issue https://github.com/Particular/NServiceBus/issues/2001
