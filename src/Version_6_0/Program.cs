@@ -26,6 +26,10 @@ class Program
         endpointConfiguration.Conventions().ApplyMessageConventions();
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
+        var recoverabilitySettings = endpointConfiguration.Recoverability();
+#pragma warning disable 618
+        recoverabilitySettings.DisableLegacyRetriesSatellite();
+#pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         endpointConfiguration.RijndaelEncryptionService();

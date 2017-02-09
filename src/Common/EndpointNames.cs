@@ -8,10 +8,10 @@ public class EndpointNames
     {
         var location = typeof(EndpointNames).Assembly.Location;
         var directoryName = Path.GetDirectoryName(location);
-        var allMessagesAssemblies = Directory.GetFiles(directoryName,"*.Messages.dll");
+        var allMessagesAssemblies = Directory.GetFiles(directoryName, "*.Messages.dll");
         All = allMessagesAssemblies
-            .Select(x => "WireCompat" + Path.GetFileNameWithoutExtension(x).Split('.')
-                .First()).ToList();
+            .Select(x => $"WireCompat{Path.GetFileNameWithoutExtension(x).Split('.').First()}").ToList();
     }
-    public static List<string> All ;
+
+    public static List<string> All;
 }

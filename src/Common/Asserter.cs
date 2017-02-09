@@ -17,7 +17,7 @@ public static class Asserter
         {
             return;
         }
-        log.Error("VERIFICATION-FAILED: " + message);
+        log.Error($"VERIFICATION-FAILED: {message}");
         if (Debugger.IsAttached)
         {
             throw new Exception(message);

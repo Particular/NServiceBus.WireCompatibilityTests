@@ -12,7 +12,7 @@ public class SendHandler : IHandleMessages<DataBusSendMessage>
         Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
         Bus.Reply(new DataBusResponseMessage
             {
-                PropertyDataBus = new byte[1024 * 1024],
+                PropertyDataBus = new byte[100],
                 EncryptedProperty = "Secret",
                 Sender = TestRunner.EndpointName
             });
