@@ -76,8 +76,10 @@ class Program
             encryptedPropertyConvention: p => p.Name.StartsWith("Encrypted"));
 #else
         var conventions = endpointConfiguration.Conventions();
+#pragma warning disable 618
         conventions.DefiningEncryptedPropertiesAs(p => p.Name.StartsWith("Encrypted"));
         endpointConfiguration.RijndaelEncryptionService(keyIdentifier, encryptionKey, decryptionKeys);
+#pragma warning restore 618
 #endif
     }
 }
