@@ -1,6 +1,7 @@
 ﻿using NServiceBus.Config;
 using NServiceBus.Config.ConfigurationSource;
 
+#pragma warning disable CS0618
 public class PubSubConfigOverride : IProvideConfiguration<UnicastBusConfig>
 {
     public UnicastBusConfig GetConfiguration()
@@ -23,3 +24,4 @@ public class PubSubConfigOverride : IProvideConfiguration<UnicastBusConfig>
             };
     }
 }
+#pragma warning restore CS0618
