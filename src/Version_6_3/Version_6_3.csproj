@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E3C33F8-34E8-4C1C-B3CB-9D09C7F23321}</ProjectGuid>
+    <ProjectGuid>{F075D854-B11F-49B9-A884-979A290B2E18}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Version_6_1</RootNamespace>
-    <AssemblyName>Version_6_1</AssemblyName>
+    <RootNamespace>Version_6_3</RootNamespace>
+    <AssemblyName>Version_6_3</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -21,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Version6</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;Version6;UseExternalEncryption</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -42,12 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Common\Asserter.cs">
@@ -152,10 +147,7 @@
     <ProjectReference Include="..\Version_6_0.Messages\Version_6_0.Messages.csproj" />
     <ProjectReference Include="..\Version_6_1.Messages\Version_6_1.Messages.csproj" />
     <ProjectReference Include="..\Version_6_2.Messages\Version_6_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj">
-      <Project>{ca062db6-2bee-47eb-b3c7-717ba242f756}</Project>
-      <Name>Version_6_3.Messages</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
