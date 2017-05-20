@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "NServiceBus": "6.2.*",
+    "NServiceBus": "6.3.1",
     "NServiceBus.Callbacks": "1.*",
     "NServiceBus.Encryption.MessageProperty": "1.*"
   },
