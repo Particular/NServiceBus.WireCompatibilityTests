@@ -147,10 +147,7 @@
     <ProjectReference Include="..\Version_6_0.Messages\Version_6_0.Messages.csproj" />
     <ProjectReference Include="..\Version_6_1.Messages\Version_6_1.Messages.csproj" />
     <ProjectReference Include="..\Version_6_2.Messages\Version_6_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj">
-      <Project>{ca062db6-2bee-47eb-b3c7-717ba242f756}</Project>
-      <Name>Version_6_3.Messages</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
