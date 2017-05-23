@@ -1,48 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B787F17-606E-45DC-B0ED-27FE76A1AC96}</ProjectGuid>
+    <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>$(DefineConstants);Version5</DefineConstants>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Version_5_2</RootNamespace>
-    <AssemblyName>Version_5_2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Version5</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;Version5</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <PackageReference Include="NServiceBus" Version="5.2.*" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Common\Asserter.cs">
       <Link>\Asserter.cs</Link>
     </Compile>
@@ -124,31 +95,7 @@
     <Compile Include="..\Version_5_0\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\Version_3_3.Messages\Version_3_3.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_0.Messages\Version_4_0.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_1.Messages\Version_4_1.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_2.Messages\Version_4_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_3.Messages\Version_4_3.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_4.Messages\Version_4_4.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_5.Messages\Version_4_5.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_6.Messages\Version_4_6.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_7.Messages\Version_4_7.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_0.Messages\Version_5_0.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_1.Messages\Version_5_1.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_2.Messages\Version_5_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_0.Messages\Version_6_0.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_1.Messages\Version_6_1.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_2.Messages\Version_6_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj" />
+    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
