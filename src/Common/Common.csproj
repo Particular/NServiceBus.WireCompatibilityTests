@@ -1,76 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4953B20A-7E45-43BD-AAAF-67418FBBF9F4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common</RootNamespace>
-    <AssemblyName>Common</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Version3</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
+    <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;Version3</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>$(DefineConstants);Version3</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="DataBus\DataBusInitiator.cs" />
-    <Compile Include="DataBus\ResponseHandler.cs" />
-    <Compile Include="DataBus\SendHandler.cs" />
-    <Compile Include="DataBus\DataBusVerifier.cs" />
-    <Compile Include="EncryptionVerifier.cs" />
-    <Compile Include="EndpointNames.cs" />
-    <Compile Include="Asserter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Logging.cs" />
-    <Compile Include="MessageConventions.cs" />
-    <Compile Include="PubSub\PubSubConfigOverride.cs" />
-    <Compile Include="PubSub\EventHandler.cs" />
-    <Compile Include="PubSub\PubSubInitiator.cs" />
-    <Compile Include="PubSub\PubSubVerifier.cs" />
-    <Compile Include="Saga\RequestingSaga.cs" />
-    <Compile Include="Saga\RequestingSagaData.cs" />
-    <Compile Include="Saga\RespondingSagaData.cs" />
-    <Compile Include="Saga\SagaInitiator.cs" />
-    <Compile Include="Saga\RespondingSaga.cs" />
-    <Compile Include="Saga\SagaVerifier.cs" />
-    <Compile Include="SendReply\FirstHandler.cs" />
-    <Compile Include="SendReply\SendReplyInitiator.cs" />
-    <Compile Include="SendReply\SecondHandler.cs" />
-    <Compile Include="SendReply\SendReplyVerifier.cs" />
-    <Compile Include="SendReturn\Handler.cs" />
-    <Compile Include="SendReturn\SendReturnInitiator.cs" />
-    <Compile Include="SendReturn\SendReturnVerifier.cs" />
-    <Compile Include="TestRunner.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
     <ProjectReference Include="..\Version_3_3.Messages\Version_3_3.Messages.csproj" />
     <ProjectReference Include="..\Version_4_0.Messages\Version_4_0.Messages.csproj" />
@@ -89,8 +28,4 @@
     <ProjectReference Include="..\Version_6_2.Messages\Version_6_2.Messages.csproj" />
     <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="project.json" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

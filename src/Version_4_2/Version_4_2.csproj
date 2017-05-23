@@ -1,63 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9917D07-2C88-4021-8685-28426F3BBF6C}</ProjectGuid>
+    <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningLevel>4</WarningLevel>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Namespace</RootNamespace>
-    <AssemblyName>$(ProjectName)</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <StartAction>Project</StartAction>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Version4</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;Version4</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
+    <DefineConstants>$(DefineConstants);Version4</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <PackageReference Include="log4net" Version="2.0.3" />
+    <PackageReference Include="NServiceBus" Version="4.2.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="4.2.*" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Version_3_3\Logging.cs">
       <Link>Logging.cs</Link>
     </Compile>
     <Compile Include="..\Version_4_0\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Common\Asserter.cs">
       <Link>\Asserter.cs</Link>
     </Compile>
@@ -156,5 +118,4 @@
     <ProjectReference Include="..\Version_6_2.Messages\Version_6_2.Messages.csproj" />
     <ProjectReference Include="..\Version_6_3.Messages\Version_6_3.Messages.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
