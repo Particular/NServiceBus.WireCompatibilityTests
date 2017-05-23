@@ -12,6 +12,7 @@
     <PackageReference Include="NServiceBus" Version="6.0.*" />
     <PackageReference Include="NServiceBus.Callbacks" Version="1.1.*" />
     <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
       <Link>Asserter.cs</Link>
     </Compile>

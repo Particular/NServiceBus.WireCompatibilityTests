@@ -14,6 +14,7 @@
     <PackageReference Include="NServiceBus" Version="6.3.*" />
     <PackageReference Include="NServiceBus.Encryption.MessageProperty" Version="1.*" />
     <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
       <Link>Asserter.cs</Link>
     </Compile>

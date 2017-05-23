@@ -18,6 +18,7 @@
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" />
     <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
       <Link>\Asserter.cs</Link>
     </Compile>

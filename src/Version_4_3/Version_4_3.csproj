@@ -14,6 +14,7 @@
     <PackageReference Include="NServiceBus" Version="4.3.*" />
     <PackageReference Include="NServiceBus.Interfaces" Version="4.3.*" />
     <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Version_3_3\Logging.cs">
       <Link>Logging.cs</Link>
     </Compile>
