@@ -25,7 +25,7 @@ public static class MessageConventions
         b.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 
-#elif(Version6)
+#elif(Version6 || Version7)
 
     public static void ApplyMessageConventions(this ConventionsBuilder b)
     {

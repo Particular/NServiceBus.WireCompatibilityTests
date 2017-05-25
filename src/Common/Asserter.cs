@@ -5,7 +5,7 @@ using System.Linq;
 
 public static class Asserter
 {
-#if (Version5 || Version6)
+#if (Version5 || Version6 || Version7)
     static NServiceBus.Logging.ILog log = NServiceBus.Logging.LogManager.GetLogger("Asserter");
 #else
     static log4net.ILog log = log4net.LogManager.GetLogger("Asserter");
