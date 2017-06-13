@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>$(DefineConstants);Version3</DefineConstants>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="1.2.10" />
+    <PackageReference Include="NServiceBus" Version="3.3.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="3.3.*" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
+    <Compile Include="..\Common\Asserter.cs">
+      <Link>\Asserter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\EncryptionVerifier.cs">
+      <Link>\EncryptionVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\EndpointNames.cs">
+      <Link>\EndpointNames.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\MessageConventions.cs">
+      <Link>\MessageConventions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\FirstHandler.cs">
+      <Link>FirstHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SecondHandler.cs">
+      <Link>SecondHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SendReplyInitiator.cs">
+      <Link>SendReplyInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SendReplyVerifier.cs">
+      <Link>SendReplyVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\TestRunner.cs">
+      <Link>\TestRunner.cs</Link>
+    </Compile>
+    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
+  </ItemGroup>
+</Project>
