@@ -8,10 +8,10 @@ public static class TestRunner
 
     public static void RunTests(IBus bus)
     {
-        Thread.Sleep(TimeSpan.FromSeconds(5));
+        Thread.Sleep(TimeSpan.FromSeconds(25));
         bus.InitiateSendReply();
 
-        Thread.Sleep(TimeSpan.FromSeconds(30));
+        Thread.Sleep(TimeSpan.FromMinutes(1));
         var disposable = bus as IDisposable;
         disposable?.Dispose();
         SendReplyVerifier.AssertExpectations();
