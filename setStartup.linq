@@ -6,17 +6,20 @@
 void Main()
 {
 	var diretory = Path.GetDirectoryName(Util.CurrentQueryPath);
-	var src = Path.Combine(diretory, "src");
-	SetStartupProjects(src);
+	SetStartupProjects(diretory);
 }
 
 public static void SetStartupProjects(string codeDirectory)
 {
-	var startProjectSuoCreator = new StartProjectSuoCreator();
+	foreach (var suo in Directory.EnumerateDirectories(codeDirectory, ".vs", SearchOption.AllDirectories))
+	{
+		Directory.Delete(suo, true);
+	}
 	foreach (var suo in Directory.EnumerateFiles(codeDirectory, "*.suo", SearchOption.AllDirectories))
 	{
 		File.Delete(suo);
 	}
+	var startProjectSuoCreator = new StartProjectSuoCreator();
 	foreach (var solutionFile in Directory.EnumerateFiles(codeDirectory, "*.sln", SearchOption.AllDirectories))
 	{
 		var startProjects = GetStartupProjects(solutionFile).ToList();
