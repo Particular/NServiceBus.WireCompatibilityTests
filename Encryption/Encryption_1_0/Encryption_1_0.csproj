@@ -6,11 +6,12 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version6</DefineConstants>
+    <DefineConstants>$(DefineConstants);Version6;UseExternalEncryption</DefineConstants>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.1.*" />
+    <PackageReference Include="NServiceBus" Version="6.3.*" />
+    <PackageReference Include="NServiceBus.Encryption.MessageProperty" Version="1.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
@@ -25,22 +26,22 @@
     <Compile Include="..\Common\SendReplyVerifier.cs">
       <Link>SendReplyVerifier.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\EncryptionVerifier.cs">
+    <Compile Include="..\Core_6_0\EncryptionVerifier.cs">
       <Link>EncryptionVerifier.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\Program.cs">
+    <Compile Include="..\Core_6_0\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\FirstHandler.cs">
+    <Compile Include="..\Core_6_0\FirstHandler.cs">
       <Link>FirstHandler.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\SecondHandler.cs">
+    <Compile Include="..\Core_6_0\SecondHandler.cs">
       <Link>SecondHandler.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\SendReplyInitiator.cs">
+    <Compile Include="..\Core_6_0\SendReplyInitiator.cs">
       <Link>SendReplyInitiator.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\TestRunner.cs">
+    <Compile Include="..\Core_6_0\TestRunner.cs">
       <Link>TestRunner.cs</Link>
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
