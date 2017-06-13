@@ -1,17 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <PlatformTarget>x86</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version7</DefineConstants>
+    <DefineConstants>$(DefineConstants);Version5</DefineConstants>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.0.0-alpha*" />
-    <PackageReference Include="NServiceBus.Callbacks" Version="1.1.*" />
-    <PackageReference Include="NServiceBus.Transport.Msmq" Version="1.0.0-alpha0037" />
+    <PackageReference Include="NServiceBus" Version="5.1.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
@@ -23,8 +22,20 @@
     <Compile Include="..\Common\MessageConventions.cs">
       <Link>MessageConventions.cs</Link>
     </Compile>
+    <Compile Include="..\Common\Handler.cs">
+      <Link>Handler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SendReturnInitiator.cs">
+      <Link>SendReturnInitiator.cs</Link>
+    </Compile>
     <Compile Include="..\Common\SendReturnVerifier.cs">
       <Link>SendReturnVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\TestRunner.cs">
+      <Link>TestRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Core_5_0\Program.cs">
+      <Link>Program.cs</Link>
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
   </ItemGroup>

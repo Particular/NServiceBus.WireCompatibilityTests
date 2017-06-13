@@ -11,14 +11,14 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.3" />
-    <PackageReference Include="NServiceBus" Version="4.3.*" />
-    <PackageReference Include="NServiceBus.Interfaces" Version="4.3.*" />
+    <PackageReference Include="NServiceBus" Version="4.7.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="4.7.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Version_3_3\Logging.cs">
+    <Compile Include="..\Core_3_3\Logging.cs">
       <Link>Logging.cs</Link>
     </Compile>
-    <Compile Include="..\Version_4_0\Program.cs">
+    <Compile Include="..\Core_4_0\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="..\Common\Asserter.cs">
