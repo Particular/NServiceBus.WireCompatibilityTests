@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Linq;
 
 public class DataBusVerifier
 {
@@ -9,6 +10,22 @@ public class DataBusVerifier
             ResponseReceivedFromSites.VerifyContains(endpointName, $"{TestRunner.EndpointName} expected to receive a send from site {endpointName}");
             SendReceivedFromSites.VerifyContains(endpointName, $"{TestRunner.EndpointName} expected to receive a response from site {endpointName}");
         }
+    }
+
+    public static bool IsFinished()
+    {
+        foreach (var endpointName in EndpointNames.All)
+        {
+            if (!ResponseReceivedFromSites.Contains(endpointName))
+            {
+                return false;
+            }
+            if (!SendReceivedFromSites.Contains(endpointName))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static ConcurrentBag<string> SendReceivedFromSites = new ConcurrentBag<string>();

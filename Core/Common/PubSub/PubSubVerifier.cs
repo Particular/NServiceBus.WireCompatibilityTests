@@ -11,6 +11,10 @@ public class PubSubVerifier
             Asserter.IsTrue(EventReceivedFrom.Contains(endpointName), $"{TestRunner.EndpointName} expected a event to be Received From {endpointName}");
         }
     }
+    public static bool IsFinished()
+    {
+        return EndpointNames.All.All(endpointName => EventReceivedFrom.Contains(endpointName));
+    }
 
     public static ConcurrentBag<string> EventReceivedFrom = new ConcurrentBag<string>();
 

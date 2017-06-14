@@ -14,7 +14,19 @@ public static class TestRunner
         bus.InitiateSaga();
         bus.InitiateSendReply();
 
-        Thread.Sleep(TimeSpan.FromMinutes(1));
+        for (var i = 0; i < 10; i++)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(10));
+            if (
+                DataBusVerifier.IsFinished() &&
+                PubSubVerifier.IsFinished() &&
+                SagaVerifier.IsFinished() &&
+                SendReplyVerifier.IsFinished())
+            {
+                break;
+            }
+        }
+
         var disposable = bus as IDisposable;
         disposable?.Dispose();
         DataBusVerifier.AssertExpectations();
