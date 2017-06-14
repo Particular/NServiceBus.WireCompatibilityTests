@@ -14,7 +14,18 @@ public static class TestRunner
         await bus.InitiateSaga().ConfigureAwait(false);
         await bus.InitiateSendReply().ConfigureAwait(false);
 
-        await Task.Delay(TimeSpan.FromMinutes(1)).ConfigureAwait(false);
+        for (var i = 0; i < 10; i++)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(10)).ConfigureAwait(false);
+            if (
+                DataBusVerifier.IsFinished() &&
+                PubSubVerifier.IsFinished() &&
+                SagaVerifier.IsFinished() &&
+                SendReplyVerifier.IsFinished())
+            {
+                break;
+            }
+        }
         await bus.Stop().ConfigureAwait(false);
         DataBusVerifier.AssertExpectations();
         PubSubVerifier.AssertExpectations();
