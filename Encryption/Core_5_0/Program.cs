@@ -2,11 +2,11 @@ using System.Reflection;
 using NServiceBus;
 using NServiceBus.Features;
 
-class Program
+public class Program
 {
     static string endpointName = $"WireCompatEncryption{Assembly.GetExecutingAssembly().GetName().Name}";
 
-    static void Main()
+    public static void Main()
     {
         var bus = CreateBus();
         TestRunner.EndpointName = endpointName;

@@ -5,10 +5,11 @@ using NServiceBus.Features;
 using NServiceBus.Installation.Environments;
 using NServiceBus.Unicast;
 
-class Program
+public class Program
 {
     static string endpointName = $"WireCompatEncryption{Assembly.GetExecutingAssembly().GetName().Name}";
-    static void Main()
+
+    public static void Main()
     {
         //HACK: for trial dialog issue https://github.com/Particular/NServiceBus/issues/2001
         var synchronizationContext = SynchronizationContext.Current;
