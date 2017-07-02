@@ -38,7 +38,9 @@ class Program
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         // Required by callbacks to have each instance uniquely addressable
         endpointConfiguration.MakeInstanceUniquelyAddressable("1");
-
+#if (CallbacksV2)
+        endpointConfiguration.EnableCallbacks();
+#endif
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);
