@@ -6,7 +6,7 @@ class Program
 {
     static string endpointName = $"WireCompatCallbacks{Assembly.GetExecutingAssembly().GetName().Name}";
 
-    static void Main()
+    public static void Main()
     {
         var bus = CreateBus();
         TestRunner.EndpointName = endpointName;
