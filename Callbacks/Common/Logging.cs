@@ -55,14 +55,14 @@ public static class Logging
         {
             CountDirection = 1,
             DatePattern = "yyyy-MM-dd",
-            RollingStyle = RollingFileAppender.RollingMode.Composite, 
+            RollingStyle = RollingFileAppender.RollingMode.Composite,
             MaxFileSize = 1024*1024,
             MaxSizeRollBackups = 10,
             LockingModel = new FileAppender.MinimalLock(),
             StaticLogFileName = true,
-            File = "logfile.txt", 
+            File = "logfile.txt",
             AppendToFile = true,
-            ImmediateFlush = true, 
+            ImmediateFlush = true,
             Layout = pl
         };
         fileAppender.ActivateOptions();

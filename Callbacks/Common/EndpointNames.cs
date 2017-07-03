@@ -8,6 +8,7 @@ public class EndpointNames
     static EndpointNames()
     {
         All = Directory.GetDirectories(FindSolutionRoot(), "*_*")
+            .Where(x => !x.Contains("Common"))
             .Select(x => $"WireCompatCallbacks{Path.GetFileName(x)}")
             .ToList();
     }
@@ -33,5 +34,6 @@ public class EndpointNames
             directory = parent.FullName;
         }
     }
+
     public static List<string> All;
 }
