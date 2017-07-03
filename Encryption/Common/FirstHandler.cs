@@ -13,7 +13,7 @@ namespace Common.SendReply
             Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
             Bus.Reply(new SendReplySecondMessage
                 {
-                    Sender = TestRunner.EndpointName,
+                    Sender = EndpointNames.EndpointName,
                     EncryptedProperty = "Secret"
                 });
         }

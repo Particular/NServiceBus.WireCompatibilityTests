@@ -13,7 +13,7 @@ namespace Common.SendReply
 
             return context.Reply(new SendReplySecondMessage
                 {
-                    Sender = TestRunner.EndpointName,
+                    Sender = EndpointNames.EndpointName,
                     EncryptedProperty = "Secret"
                 });
         }

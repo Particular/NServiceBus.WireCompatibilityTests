@@ -4,7 +4,6 @@ using NServiceBus;
 
 public static class TestRunner
 {
-    public static string EndpointName { get; set; }
 
     public static async Task RunTests(IEndpointInstance bus)
     {

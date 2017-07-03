@@ -1,35 +1,30 @@
-using System.Reflection;
 using System.Threading;
 using NServiceBus;
-using NServiceBus.Features;
 using NServiceBus.Installation.Environments;
 using NServiceBus.Unicast;
 
-public class Program
+class Program
 {
-    static string endpointName = $"WireCompatEncryption{Assembly.GetExecutingAssembly().GetName().Name}";
-
-    public static void Main()
+    static void Main()
     {
         //HACK: for trial dialog issue https://github.com/Particular/NServiceBus/issues/2001
         var synchronizationContext = SynchronizationContext.Current;
         var bus = CreateBus();
         SynchronizationContext.SetSynchronizationContext(synchronizationContext);
-        TestRunner.EndpointName = endpointName;
         TestRunner.RunTests(bus);
     }
 
     static UnicastBus CreateBus()
     {
-        Configure.GetEndpointNameAction = () => endpointName;
+        Configure.GetEndpointNameAction = () => EndpointNames.EndpointName;
 
         Logging.ConfigureLogging();
-        Configure.Features.Disable<TimeoutManager>();
-        Configure.Serialization.Json();
         var configure = Configure.With();
+        configure.DisableTimeoutManager();
         configure.ApplyMessageConventions();
         configure.DefaultBuilder();
-        configure.UseTransport<Msmq>();
+        configure.MsmqTransport();
+        configure.JsonSerializer();
         configure.RijndaelEncryptionService();
         configure.Configurer.ConfigureComponent<EncryptionVerifier>(DependencyLifecycle.SingleInstance);
 
