@@ -4,7 +4,6 @@
     <TargetFramework>net462</TargetFramework>
     <PlatformTarget>x86</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DefineConstants>$(DefineConstants);Version6</DefineConstants>
     <OutputType>Exe</OutputType>
