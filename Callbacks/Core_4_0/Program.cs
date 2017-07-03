@@ -23,6 +23,7 @@ class Program
         Configure.GetEndpointNameAction = () => endpointName;
 
         Logging.ConfigureLogging();
+        Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         Configure.Features.Disable<TimeoutManager>();
         Configure.Serialization.Json();
         var configure = Configure.With();

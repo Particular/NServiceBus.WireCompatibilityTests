@@ -15,6 +15,7 @@ class Program
 
     static IBus CreateBus()
     {
+        Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
         var busConfiguration = new BusConfiguration();
         busConfiguration.EndpointName(endpointName);
         var conventions = busConfiguration.Conventions();
