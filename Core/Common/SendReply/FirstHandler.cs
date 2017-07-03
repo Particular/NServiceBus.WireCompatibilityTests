@@ -12,7 +12,7 @@ namespace Common.SendReply
             SendReplyVerifier.FirstMessageReceivedFrom.Add(message.Sender);
             Bus.Reply(new SendReplySecondMessage
                 {
-                    Sender = TestRunner.EndpointName,
+                    Sender = EndpointNames.EndpointName,
                 });
         }
     }

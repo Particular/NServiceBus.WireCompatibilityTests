@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 public class EndpointNames
 {
+    public static readonly string EndpointName = $"WireCompatCallbacks{Assembly.GetEntryAssembly().GetName().Name}";
+
     static EndpointNames()
     {
         All = Directory.GetDirectories(FindSolutionRoot(), "*_*")

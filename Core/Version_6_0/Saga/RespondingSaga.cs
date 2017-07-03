@@ -12,7 +12,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var response = new SagaResponseFromOtherMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             return context.Reply(response);
         }

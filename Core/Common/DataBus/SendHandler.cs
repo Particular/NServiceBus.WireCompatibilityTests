@@ -12,7 +12,7 @@ public class SendHandler : IHandleMessages<DataBusSendMessage>
         Bus.Reply(new DataBusResponseMessage
             {
                 PropertyDataBus = new byte[100],
-                Sender = TestRunner.EndpointName
-            });
+                Sender = EndpointNames.EndpointName
+        });
     }
 }

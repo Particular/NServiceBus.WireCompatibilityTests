@@ -11,8 +11,8 @@ namespace Common.SendReply
             SendReplyVerifier.FirstMessageReceivedFrom.Add(message.Sender);
             return context.Reply(new SendReplySecondMessage
                 {
-                    Sender = TestRunner.EndpointName,
-                });
+                    Sender = EndpointNames.EndpointName
+            });
         }
     }
 }

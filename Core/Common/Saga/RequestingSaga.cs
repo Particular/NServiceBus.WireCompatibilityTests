@@ -15,7 +15,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var newMessage = new SagaRequestToRespondingMessage
                 {
-                    Sender = TestRunner.EndpointName
+                    Sender = EndpointNames.EndpointName
                 };
             Bus.Send(message.TargetEndpoint, newMessage);
         }
@@ -46,7 +46,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var newMessage = new SagaRequestToRespondingMessage
                 {
-                    Sender = TestRunner.EndpointName
+                    Sender = EndpointNames.EndpointName
                 };
             Bus.Send(message.TargetEndpoint, newMessage);
         }
@@ -76,7 +76,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var newMessage = new SagaRequestToRespondingMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             Bus.Send(message.TargetEndpoint, newMessage);
         }

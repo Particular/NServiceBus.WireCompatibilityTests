@@ -1,22 +1,19 @@
-using System.Reflection;
 using NServiceBus;
 using NServiceBus.Features;
 
 public class Program
 {
-    static string endpointName = $"WireCompatEncryption{Assembly.GetExecutingAssembly().GetName().Name}";
 
     public static void Main()
     {
         var bus = CreateBus();
-        TestRunner.EndpointName = endpointName;
         TestRunner.RunTests(bus);
     }
 
     static IBus CreateBus()
     {
         var busConfiguration = new BusConfiguration();
-        busConfiguration.EndpointName(endpointName);
+        busConfiguration.EndpointName(EndpointNames.EndpointName);
         busConfiguration.Conventions().ApplyMessageConventions();
         busConfiguration.UseSerialization<JsonSerializer>();
         busConfiguration.UseTransport<MsmqTransport>();

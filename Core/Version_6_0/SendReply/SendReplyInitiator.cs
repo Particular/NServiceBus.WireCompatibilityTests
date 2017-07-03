@@ -10,7 +10,7 @@ public static class SendReplyInitiator
         {
             await bus.Send(endpoint, new SendReplyFirstMessage
                 {
-                    Sender = TestRunner.EndpointName,
+                    Sender = EndpointNames.EndpointName,
                 }).ConfigureAwait(false);
         }
     }

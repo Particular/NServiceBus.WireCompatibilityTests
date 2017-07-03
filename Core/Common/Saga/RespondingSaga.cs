@@ -13,7 +13,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var response = new SagaResponseFromOtherMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             Bus.Reply(response);
         }
@@ -38,7 +38,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var response = new SagaResponseFromOtherMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             Bus.Reply(response);
         }
@@ -62,7 +62,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var response = new SagaResponseFromOtherMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             Bus.Reply(response);
         }

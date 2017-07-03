@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Linq;
 
@@ -24,8 +24,9 @@ public static class Asserter
         }
     }
 
-    public static void VerifyContains(this IEnumerable<string> existing, string expecting, string message)
+    public static void VerifyContains(this ConcurrentBag<string> existing, string expecting, string message)
     {
-        IsTrue(existing.Any(x => x.ToLowerInvariant() == expecting.ToLowerInvariant()), message);
+        var list = existing.ToList();
+        IsTrue(list.Any(x => x.ToLowerInvariant() == expecting.ToLowerInvariant()), message);
     }
 }

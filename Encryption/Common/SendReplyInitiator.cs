@@ -10,7 +10,7 @@ public static class SendReplyInitiator
         {
             bus.Send(endpointName, new SendReplyFirstMessage
             {
-                Sender = TestRunner.EndpointName,
+                Sender = EndpointNames.EndpointName,
                 EncryptedProperty = "Secret"
             });
         });

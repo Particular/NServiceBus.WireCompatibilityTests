@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using NServiceBus;
@@ -7,7 +6,6 @@ using NServiceBus.Features;
 
 class Program
 {
-    static string endpointName = $"WireCompatEncryption{Assembly.GetExecutingAssembly().GetName().Name}";
 
     static void Main()
     {
@@ -18,14 +16,13 @@ class Program
     {
         var bus = await CreateBus()
             .ConfigureAwait(false);
-        TestRunner.EndpointName = endpointName;
         await TestRunner.RunTests(bus)
             .ConfigureAwait(false);
     }
 
     static Task<IEndpointInstance> CreateBus()
     {
-        var endpointConfiguration = new EndpointConfiguration(endpointName);
+        var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
         conventions.ApplyMessageConventions();
 
