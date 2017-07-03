@@ -20,9 +20,6 @@
     <Compile Include="..\Common\EndpointNames.cs">
       <Link>EndpointNames.cs</Link>
     </Compile>
-    <Compile Include="..\Common\MessageConventions.cs">
-      <Link>MessageConventions.cs</Link>
-    </Compile>
     <Compile Include="..\Common\SendReturnVerifier.cs">
       <Link>SendReturnVerifier.cs</Link>
     </Compile>

@@ -25,7 +25,7 @@ class Program
     {
         var endpointConfiguration = new EndpointConfiguration(endpointName);
         var conventions = endpointConfiguration.Conventions();
-        conventions.ApplyMessageConventions();
+        conventions.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
 
         endpointConfiguration.DisableFeature<TimeoutManager>();
         endpointConfiguration.SendFailedMessagesTo("error");

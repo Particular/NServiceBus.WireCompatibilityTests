@@ -24,7 +24,7 @@ class Program
         Logging.ConfigureLogging();
         var configure = Configure.With();
         configure.DisableTimeoutManager();
-        configure.ApplyMessageConventions();
+        configure.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
         configure.DefaultBuilder();
         configure.MsmqTransport();
         configure.JsonSerializer();
