@@ -1,11 +1,9 @@
-using System.Reflection;
 using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Features;
 
 class Program
 {
-    static string endpointName = $"WireCompatCallbacks{Assembly.GetExecutingAssembly().GetName().Name}";
 
     public static void Main()
     {
@@ -16,7 +14,6 @@ class Program
     {
         var bus = await CreateBus()
             .ConfigureAwait(false);
-        TestRunner.EndpointName = endpointName;
         await TestRunner.RunTests(bus)
             .ConfigureAwait(false);
     }
@@ -24,7 +21,7 @@ class Program
     static Task<IEndpointInstance> CreateBus()
     {
         Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
-        var endpointConfiguration = new EndpointConfiguration(endpointName);
+        var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
         conventions.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
 

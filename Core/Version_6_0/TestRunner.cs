@@ -1,11 +1,9 @@
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 using NServiceBus;
 
 public static class TestRunner
 {
-    public static string EndpointName { get; set; }
 
     public static async Task RunTests(IEndpointInstance bus)
     {

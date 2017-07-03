@@ -11,7 +11,7 @@ public class SendHandler : IHandleMessages<DataBusSendMessage>
         return context.Reply(new DataBusResponseMessage
             {
                 PropertyDataBus = new byte[100],
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             });
     }
 }

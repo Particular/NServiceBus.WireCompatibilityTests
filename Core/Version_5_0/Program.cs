@@ -1,21 +1,18 @@
-using System.Reflection;
 using NServiceBus;
 
 class Program
 {
-    static string endpointName = $"WireCompat{Assembly.GetExecutingAssembly().GetName().Name}";
 
-    static void Main()
+    public static void Main()
     {
         var bus = CreateBus();
-        TestRunner.EndpointName = endpointName;
         TestRunner.RunTests(bus);
     }
 
     static IBus CreateBus()
     {
         var busConfiguration = new BusConfiguration();
-        busConfiguration.EndpointName(endpointName);
+        busConfiguration.EndpointName(EndpointNames.EndpointName);
         busConfiguration.Conventions().ApplyMessageConventions();
         busConfiguration.UseSerialization<JsonSerializer>();
         busConfiguration.UseTransport<MsmqTransport>();

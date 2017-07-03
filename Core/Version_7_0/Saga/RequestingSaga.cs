@@ -14,7 +14,7 @@ namespace Common.Saga
             Data.MessageId = message.MessageId;
             var newMessage = new SagaRequestToRespondingMessage
             {
-                Sender = TestRunner.EndpointName
+                Sender = EndpointNames.EndpointName
             };
             return context.Send(message.TargetEndpoint, newMessage);
         }

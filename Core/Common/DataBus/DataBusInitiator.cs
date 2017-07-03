@@ -12,7 +12,7 @@ public static class DataBusInitiator
             var sendMessage = new DataBusSendMessage
             {
                 PropertyDataBus = new byte[10],
-                SentFrom = TestRunner.EndpointName
+                SentFrom = EndpointNames.EndpointName
             };
             bus.Send(endpointName, sendMessage);
         });

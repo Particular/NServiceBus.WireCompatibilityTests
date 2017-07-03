@@ -11,7 +11,7 @@ public static class PubSubInitiator
         var typeName = $"{messagesAssemblyName}.MyEvent, {messagesAssemblyName}";
         var messageType = Type.GetType(typeName, true);
         var message = (dynamic)Activator.CreateInstance(messageType);
-        message.Sender = TestRunner.EndpointName;
+        message.Sender = EndpointNames.EndpointName;
         return bus.Publish((object)message);
     }
 }
