@@ -4,24 +4,21 @@
     <TargetFramework>net462</TargetFramework>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version4</DefineConstants>
+    <DefineConstants>$(DefineConstants);Version3</DefineConstants>
     <OutputType>Exe</OutputType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.3" />
-    <PackageReference Include="NServiceBus" Version="4.4.*" />
-    <PackageReference Include="NServiceBus.Interfaces" Version="4.4.*" />
+    <PackageReference Include="log4net" Version="1.2.10" />
+    <PackageReference Include="NServiceBus" Version="3.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="3.*" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Version_3_3\Logging.cs">
-      <Link>Logging.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_4_0\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
     <Compile Include="..\Common\Asserter.cs">
       <Link>\Asserter.cs</Link>
     </Compile>

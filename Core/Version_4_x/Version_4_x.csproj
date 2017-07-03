@@ -4,20 +4,15 @@
     <TargetFramework>net462</TargetFramework>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version3</DefineConstants>
+    <DefineConstants>$(DefineConstants);Version4</DefineConstants>
     <OutputType>Exe</OutputType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="log4net" Version="1.2.10" />
-    <PackageReference Include="NServiceBus" Version="3.3.*" />
-    <PackageReference Include="NServiceBus.Interfaces" Version="3.3.*" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
-    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0" />
+    <PackageReference Include="log4net" Version="2.0.3" />
+    <PackageReference Include="NServiceBus" Version="4.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="4.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
