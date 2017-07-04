@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using NServiceBus;
 using NServiceBus.Installation.Environments;
@@ -20,7 +21,8 @@ class Program
 
         Logging.ConfigureLogging();
         var configure = Configure.With();
-        configure.ApplyMessageConventions();
+        configure.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
         configure.DefaultBuilder();
         configure.MsmqTransport();
         configure.JsonSerializer();

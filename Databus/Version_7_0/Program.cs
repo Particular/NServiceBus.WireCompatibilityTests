@@ -20,7 +20,8 @@ class Program
     {
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
-        conventions.ApplyMessageConventions();
+        conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        conventions.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
 
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();

@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using NServiceBus;
 using NServiceBus.Features;
@@ -23,7 +24,8 @@ class Program
         Configure.Features.Enable<Sagas>();
         Configure.Serialization.Json();
         var configure = Configure.With();
-        configure.ApplyMessageConventions();
+        configure.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
         configure.DefaultBuilder();
         configure.UseTransport<Msmq>();
         configure.InMemorySagaPersister();
