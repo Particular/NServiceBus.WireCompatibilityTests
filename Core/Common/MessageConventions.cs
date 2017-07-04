@@ -10,7 +10,6 @@ public static class MessageConventions
         configure.DefiningCommandsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Command"));
         configure.DefiningEventsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Event"));
         configure.DefiningMessagesAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Message"));
-        configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 
 #elif(Version5)
@@ -20,7 +19,6 @@ public static class MessageConventions
         b.DefiningCommandsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Command"));
         b.DefiningEventsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Event"));
         b.DefiningMessagesAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Message"));
-        b.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 
 #elif(Version6 || Version7)
@@ -30,7 +28,6 @@ public static class MessageConventions
         b.DefiningCommandsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Command"));
         b.DefiningEventsAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Event"));
         b.DefiningMessagesAs(t => IsMessageNamespace(t) && t.Name.EndsWith("Message"));
-        b.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
     }
 
 #endif

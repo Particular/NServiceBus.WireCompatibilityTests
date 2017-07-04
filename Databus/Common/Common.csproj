@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>$(DefineConstants);Version3</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="1.2.10" />
+    <PackageReference Include="NServiceBus" Version="3.3.*" />
+    <PackageReference Include="NServiceBus.Interfaces" Version="3.3.*" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
+    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
+    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
+  </ItemGroup>
+</Project>

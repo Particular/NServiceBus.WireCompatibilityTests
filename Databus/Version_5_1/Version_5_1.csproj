@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>$(DefineConstants);Version5</DefineConstants>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NServiceBus" Version="5.1.*" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.CSharp" />
+    <Compile Include="..\Common\Asserter.cs">
+      <Link>\Asserter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\DataBus\DataBusInitiator.cs">
+      <Link>DataBus\\DataBusInitiator.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\DataBus\DataBusVerifier.cs">
+      <Link>DataBus\\DataBusVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\DataBus\ResponseHandler.cs">
+      <Link>DataBus\\ResponseHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\DataBus\SendHandler.cs">
+      <Link>DataBus\\SendHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\EndpointNames.cs">
+      <Link>\EndpointNames.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\MessageConventions.cs">
+      <Link>\MessageConventions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\TestRunner.cs">
+      <Link>\TestRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Version_5_0\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
+    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="PubSub\**" />
+    <Compile Remove="Saga\**" />
+    <Compile Remove="SendReply\**" />
+    <EmbeddedResource Remove="PubSub\**" />
+    <EmbeddedResource Remove="Saga\**" />
+    <EmbeddedResource Remove="SendReply\**" />
+    <None Remove="PubSub\**" />
+    <None Remove="Saga\**" />
+    <None Remove="SendReply\**" />
+    <ProjectReference Remove="PubSub\**" />
+    <ProjectReference Remove="Saga\**" />
+    <ProjectReference Remove="SendReply\**" />
+  </ItemGroup>
+</Project>

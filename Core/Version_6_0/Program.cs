@@ -31,8 +31,6 @@ class Program
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
-        endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
-
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);

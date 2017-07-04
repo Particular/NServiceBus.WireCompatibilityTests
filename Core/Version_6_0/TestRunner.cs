@@ -8,7 +8,6 @@ public static class TestRunner
     public static async Task RunTests(IEndpointInstance bus)
     {
         await Task.Delay(TimeSpan.FromSeconds(25)).ConfigureAwait(false);
-        await bus.InitiateDataBus().ConfigureAwait(false);
         await bus.InitiatePubSub().ConfigureAwait(false);
         await bus.InitiateSaga().ConfigureAwait(false);
         await bus.InitiateSendReply().ConfigureAwait(false);
@@ -17,7 +16,6 @@ public static class TestRunner
         {
             await Task.Delay(TimeSpan.FromSeconds(10)).ConfigureAwait(false);
             if (
-                DataBusVerifier.IsFinished() &&
                 PubSubVerifier.IsFinished() &&
                 SagaVerifier.IsFinished() &&
                 SendReplyVerifier.IsFinished())
@@ -27,7 +25,6 @@ public static class TestRunner
         }
 
         await bus.Stop().ConfigureAwait(false);
-        DataBusVerifier.AssertExpectations();
         PubSubVerifier.AssertExpectations();
         SagaVerifier.AssertExpectations();
         SendReplyVerifier.AssertExpectations();

@@ -17,13 +17,6 @@ class Program
         busConfiguration.UseSerialization<JsonSerializer>();
         busConfiguration.UseTransport<MsmqTransport>();
         busConfiguration.UsePersistence<InMemoryPersistence>();
-#if (Version6)
-        busConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
-#else
-#pragma warning disable 618
-        busConfiguration.FileShareDataBus("..\\..\\..\\tempstorage");
-#pragma warning restore 618
-#endif
         busConfiguration.EnableInstallers();
         var startableBus = Bus.Create(busConfiguration);
         return startableBus.Start();

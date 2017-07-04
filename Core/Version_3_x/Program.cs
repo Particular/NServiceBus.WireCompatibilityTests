@@ -29,7 +29,6 @@ class Program
         configure.RunTimeoutManager();
         configure.Sagas();
         configure.InMemorySubscriptionStorage();
-        configure.FileShareDataBus("..\\..\\..\\tempstorage");
 
         return (UnicastBus) configure.UnicastBus()
             .CreateBus().Start(() => Configure.Instance.ForInstallationOn<Windows>().Install());

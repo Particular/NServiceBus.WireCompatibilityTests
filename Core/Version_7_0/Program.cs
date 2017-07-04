@@ -28,8 +28,6 @@ class Program
         PubSubConfigOverride.RegisterPublishers(transport);
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
-        endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath("..\\..\\..\\tempstorage");
-
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);

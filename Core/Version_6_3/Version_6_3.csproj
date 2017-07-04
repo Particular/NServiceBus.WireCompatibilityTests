@@ -16,9 +16,6 @@
     <Compile Include="..\Common\Asserter.cs">
       <Link>Asserter.cs</Link>
     </Compile>
-    <Compile Include="..\Common\DataBus\DataBusVerifier.cs">
-      <Link>DataBus\DataBusVerifier.cs</Link>
-    </Compile>
     <Compile Include="..\Common\EndpointNames.cs">
       <Link>EndpointNames.cs</Link>
     </Compile>
@@ -33,15 +30,6 @@
     </Compile>
     <Compile Include="..\Common\SendReply\SendReplyVerifier.cs">
       <Link>SendReply\SendReplyVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\DataBus\DataBusInitiator.cs">
-      <Link>DataBus\DataBusInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\DataBus\ResponseHandler.cs">
-      <Link>DataBus\ResponseHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\DataBus\SendHandler.cs">
-      <Link>DataBus\SendHandler.cs</Link>
     </Compile>
     <Compile Include="..\Version_6_0\Program.cs">
       <Link>Program.cs</Link>
@@ -84,5 +72,11 @@
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
     <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DataBus\**" />
+    <EmbeddedResource Remove="DataBus\**" />
+    <None Remove="DataBus\**" />
+    <ProjectReference Remove="DataBus\**" />
   </ItemGroup>
 </Project>

@@ -16,9 +16,6 @@
     <Compile Include="..\Common\Asserter.cs">
       <Link>Asserter.cs</Link>
     </Compile>
-    <Compile Include="..\Common\DataBus\DataBusVerifier.cs">
-      <Link>DataBus\DataBusVerifier.cs</Link>
-    </Compile>
     <Compile Include="..\Common\EndpointNames.cs">
       <Link>EndpointNames.cs</Link>
     </Compile>
