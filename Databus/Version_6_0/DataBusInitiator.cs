@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
 public static class DataBusInitiator
@@ -9,7 +8,7 @@ public static class DataBusInitiator
     {
         foreach (var endpointName in EndpointNames.All)
         {
-            var sendMessage = new DataBusSendMessage
+            var sendMessage = new SendMessage
                 {
                     PropertyDataBus = new byte[10],
                     SentFrom = EndpointNames.EndpointName

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
 
-public class DataBusVerifier
+public class Verifier
 {
     public static void AssertExpectations()
     {

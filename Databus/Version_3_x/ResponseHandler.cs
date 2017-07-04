@@ -1,16 +1,12 @@
-﻿using CommonMessages;
-using NServiceBus;
+﻿using NServiceBus;
 
-namespace Common.DataBus
+public class ResponseHandler : IHandleMessages<ResponseMessage>
 {
-    public class ResponseHandler : IHandleMessages<DataBusResponseMessage>
-    {
-        public IBus Bus { get; set; }
+    public IBus Bus { get; set; }
 
-        public void Handle(DataBusResponseMessage message)
-        {
-            DataBusVerifier.ResponseReceivedFromSites.Add(message.Sender);
-            Asserter.IsTrue(message.PropertyDataBus != null, "Incorrect property value");
-        }
+    public void Handle(ResponseMessage message)
+    {
+        Verifier.ResponseReceivedFromSites.Add(message.Sender);
+        Asserter.IsTrue(message.PropertyDataBus != null, "Incorrect property value");
     }
 }

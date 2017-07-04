@@ -1,14 +1,13 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
-public class SendHandler : IHandleMessages<DataBusSendMessage>
+public class SendHandler : IHandleMessages<SendMessage>
 {
-    public Task Handle(DataBusSendMessage message, IMessageHandlerContext context)
+    public Task Handle(SendMessage message, IMessageHandlerContext context)
     {
-        DataBusVerifier.SendReceivedFromSites.Add(message.SentFrom);
+        Verifier.SendReceivedFromSites.Add(message.SentFrom);
         Asserter.IsTrue(message.PropertyDataBus != null, "Incorrect property value");
-        return context.Reply(new DataBusResponseMessage
+        return context.Reply(new ResponseMessage
             {
                 PropertyDataBus = new byte[100],
                 Sender = EndpointNames.EndpointName

@@ -13,13 +13,13 @@ public static class TestRunner
         for (var i = 0; i < 10; i++)
         {
             await Task.Delay(TimeSpan.FromSeconds(5)).ConfigureAwait(false);
-            if (DataBusVerifier.IsFinished())
+            if (Verifier.IsFinished())
             {
                 break;
             }
         }
 
         await bus.Stop().ConfigureAwait(false);
-        DataBusVerifier.AssertExpectations();
+        Verifier.AssertExpectations();
     }
 }

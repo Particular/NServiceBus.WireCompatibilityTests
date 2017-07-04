@@ -1,15 +1,14 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
-public static class DataBusInitiator
+public static class Initiator
 {
 
-    public static void InitiateDataBus(this IBus bus)
+    public static void Initiate(this IBus bus)
     {
         Parallel.ForEach(EndpointNames.All, endpointName =>
         {
-            var sendMessage = new DataBusSendMessage
+            var sendMessage = new SendMessage
             {
                 PropertyDataBus = new byte[10],
                 SentFrom = EndpointNames.EndpointName

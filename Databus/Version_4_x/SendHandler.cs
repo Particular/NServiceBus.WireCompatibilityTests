@@ -1,15 +1,14 @@
-﻿using CommonMessages;
-using NServiceBus;
+﻿using NServiceBus;
 
-public class SendHandler : IHandleMessages<DataBusSendMessage>
+public class SendHandler : IHandleMessages<SendMessage>
 {
     public IBus Bus { get; set; }
 
-    public void Handle(DataBusSendMessage message)
+    public void Handle(SendMessage message)
     {
-        DataBusVerifier.SendReceivedFromSites.Add(message.SentFrom);
+        Verifier.SendReceivedFromSites.Add(message.SentFrom);
         Asserter.IsTrue(message.PropertyDataBus != null, "Incorrect property value");
-        Bus.Reply(new DataBusResponseMessage
+        Bus.Reply(new ResponseMessage
             {
                 PropertyDataBus = new byte[100],
                 Sender = EndpointNames.EndpointName
