@@ -7,7 +7,7 @@ using NServiceBus.Features;
 class Program
 {
 
-    static void Main()
+    public static void Main()
     {
         AsyncMain().GetAwaiter().GetResult();
     }
@@ -47,7 +47,7 @@ class Program
         endpointConfiguration.RegisterComponents(
             components =>
             {
-                components.ConfigureComponent<EncryptionVerifier>(DependencyLifecycle.SingleInstance);
+                components.ConfigureComponent<MutatorVerifier>(DependencyLifecycle.SingleInstance);
             });
         endpointConfiguration.EnableInstallers();
 

@@ -26,7 +26,7 @@ public class Program
         busConfiguration.RegisterComponents(
             components =>
             {
-                components.ConfigureComponent<EncryptionVerifier>(DependencyLifecycle.SingleInstance);
+                components.ConfigureComponent<MutatorVerifier>(DependencyLifecycle.SingleInstance);
             });
         busConfiguration.EnableInstallers();
         var startableBus = Bus.Create(busConfiguration);

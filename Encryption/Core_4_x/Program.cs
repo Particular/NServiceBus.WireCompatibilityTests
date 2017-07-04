@@ -30,7 +30,7 @@ public class Program
         configure.DefaultBuilder();
         configure.UseTransport<Msmq>();
         configure.RijndaelEncryptionService();
-        configure.Configurer.ConfigureComponent<EncryptionVerifier>(DependencyLifecycle.SingleInstance);
+        configure.Configurer.ConfigureComponent<MutatorVerifier>(DependencyLifecycle.SingleInstance);
 
         return (UnicastBus) configure.UnicastBus()
             .CreateBus().Start(() => Configure.Instance.ForInstallationOn<Windows>().Install());

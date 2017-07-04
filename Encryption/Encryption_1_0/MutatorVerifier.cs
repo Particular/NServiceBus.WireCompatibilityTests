@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NServiceBus.MessageMutator;
 
-public class EncryptionVerifier : IMutateIncomingTransportMessages
+public class MutatorVerifier : IMutateIncomingTransportMessages
 {
 
     public Task MutateIncoming(MutateIncomingTransportMessageContext context)

@@ -7,7 +7,7 @@ public static class TestRunner
     public static void RunTests(IBus bus)
     {
         Thread.Sleep(TimeSpan.FromSeconds(10));
-        bus.InitiateSendReply();
+        bus.Initiate();
 
         Thread.Sleep(TimeSpan.FromSeconds(10));
         var disposable = bus as IDisposable;

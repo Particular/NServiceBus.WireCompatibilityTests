@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using NServiceBus;
 
-public static class SendReplyInitiator
+public static class Initiator
 {
-    public static async Task InitiateSendReply(this IEndpointInstance bus)
+    public static async Task Initiate(this IEndpointInstance bus)
     {
         foreach (var endpoint in EndpointNames.All)
         {

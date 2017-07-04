@@ -44,7 +44,7 @@ class Program
         endpointConfiguration.RegisterComponents(
             components =>
             {
-                components.ConfigureComponent<EncryptionVerifier>(DependencyLifecycle.SingleInstance);
+                components.ConfigureComponent<MutatorVerifier>(DependencyLifecycle.SingleInstance);
             });
         endpointConfiguration.EnableInstallers();
 

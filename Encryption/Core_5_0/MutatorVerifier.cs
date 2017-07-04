@@ -5,7 +5,7 @@ using NServiceBus.MessageMutator;
 using NServiceBus.Unicast.Transport;
 // ReSharper restore RedundantUsingDirective
 
-public class EncryptionVerifier : IMutateIncomingTransportMessages
+public class MutatorVerifier : IMutateIncomingTransportMessages
 {
 
     public void MutateIncoming(TransportMessage transportMessage)
