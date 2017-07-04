@@ -9,11 +9,19 @@ public static class Initiator
         Parallel.ForEach(EndpointNames.All, endpointName =>
         {
             var remoteName = endpointName;
-            bus.Send(endpointName, new Message())
+
+            bus.Send(remoteName, new IntMessage())
                 .Register<int>(i =>
                 {
-                    Asserter.IsTrue(5 == i, "Incorrect property value");
-                    Verifier.ReplyReceivedFrom.Add(remoteName);
+                    Asserter.IsTrue(5 == i, "Incorrect int value");
+                    Verifier.IntReplyReceivedFrom.Add(remoteName);
+                });
+
+            bus.Send(remoteName, new EnumMessage())
+                .Register<CustomEnum>(i =>
+                {
+                    Asserter.IsTrue(CustomEnum.Value2 == i, "Incorrect enum value");
+                    Verifier.EnumReplyReceivedFrom.Add(remoteName);
                 });
         });
     }

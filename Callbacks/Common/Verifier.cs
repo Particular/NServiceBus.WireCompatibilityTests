@@ -7,9 +7,11 @@ public class Verifier
     {
         foreach (var endpointName in EndpointNames.All)
         {
-            ReplyReceivedFrom.VerifyContains(endpointName, $"{EndpointNames.EndpointName} expected a reply to be Received From {endpointName}");
+            IntReplyReceivedFrom.VerifyContains(endpointName, $"{EndpointNames.EndpointName} expected a int reply to be Received From {endpointName}");
+            EnumReplyReceivedFrom.VerifyContains(endpointName, $"{EndpointNames.EndpointName} expected a enum reply to be Received From {endpointName}");
         }
     }
 
-    public static ConcurrentBag<string> ReplyReceivedFrom = new ConcurrentBag<string>();
+    public static ConcurrentBag<string> IntReplyReceivedFrom = new ConcurrentBag<string>();
+    public static ConcurrentBag<string> EnumReplyReceivedFrom = new ConcurrentBag<string>();
 }
