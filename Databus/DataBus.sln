@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Version_3_x", "Version_3_x\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Version_4_x", "Version_4_x\Version_4_x.csproj", "{65AF4EAB-FE04-4306-B553-4B3851C6D74B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonMessages", "CommonMessages\CommonMessages.csproj", "{070B0680-0B27-4B65-9FAE-7A53B8C53E67}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Version_5_0", "Version_5_0\Version_5_0.csproj", "{FF949B79-CA34-4831-AC27-2A82397CCFEF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Version_5_1", "Version_5_1\Version_5_1.csproj", "{B79C21C0-8994-48C8-A68C-7C2296B13430}"
@@ -45,10 +43,6 @@ Global
 		{65AF4EAB-FE04-4306-B553-4B3851C6D74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65AF4EAB-FE04-4306-B553-4B3851C6D74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65AF4EAB-FE04-4306-B553-4B3851C6D74B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{070B0680-0B27-4B65-9FAE-7A53B8C53E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{070B0680-0B27-4B65-9FAE-7A53B8C53E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{070B0680-0B27-4B65-9FAE-7A53B8C53E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{070B0680-0B27-4B65-9FAE-7A53B8C53E67}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF949B79-CA34-4831-AC27-2A82397CCFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF949B79-CA34-4831-AC27-2A82397CCFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF949B79-CA34-4831-AC27-2A82397CCFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU

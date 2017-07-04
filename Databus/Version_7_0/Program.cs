@@ -18,6 +18,7 @@ class Program
 
     static Task<IEndpointInstance> CreateBus()
     {
+        Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
         conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));

@@ -24,40 +24,27 @@ public static class Logging
             });
 
         SetLoggingLibrary.Log4Net<ColoredConsoleAppender>(null,
-            a =>
+            consoleAppender =>
             {
-                PrepareColors(a);
-                a.Threshold = Level.Info;
+                PrepareColors(consoleAppender);
+                consoleAppender.Threshold = Level.Info;
             }
-            );
+        );
     }
 
-
-    static void PrepareColors(ColoredConsoleAppender a)
+    static void PrepareColors(ColoredConsoleAppender consoleAppender)
     {
-        var mapping = new ColoredConsoleAppender.LevelColors
-            {
-                Level = Level.Debug,
-                ForeColor = ColoredConsoleAppender.Colors.White
-            };
-        a.AddMapping(mapping);
-        var colors2 = new ColoredConsoleAppender.LevelColors
-            {
-                Level = Level.Info,
-                ForeColor = ColoredConsoleAppender.Colors.Green
-            };
-        a.AddMapping(colors2);
-        var colors3 = new ColoredConsoleAppender.LevelColors
-            {
-                Level = Level.Warn,
-                ForeColor = ColoredConsoleAppender.Colors.HighIntensity | ColoredConsoleAppender.Colors.Yellow
-            };
-        a.AddMapping(colors3);
-        var colors4 = new ColoredConsoleAppender.LevelColors
-            {
-                Level = Level.Error,
-                ForeColor = ColoredConsoleAppender.Colors.HighIntensity | ColoredConsoleAppender.Colors.Red
-            };
-        a.AddMapping(colors4);
+        var warn = new ColoredConsoleAppender.LevelColors
+        {
+            Level = Level.Warn,
+            ForeColor = ColoredConsoleAppender.Colors.Yellow
+        };
+        consoleAppender.AddMapping(warn);
+        var error = new ColoredConsoleAppender.LevelColors
+        {
+            Level = Level.Error,
+            ForeColor = ColoredConsoleAppender.Colors.Red
+        };
+        consoleAppender.AddMapping(error);
     }
 }

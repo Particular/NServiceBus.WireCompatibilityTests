@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using NServiceBus;
 using NServiceBus.Installation.Environments;
@@ -20,6 +19,7 @@ class Program
         Configure.GetEndpointNameAction = () => EndpointNames.EndpointName;
 
         Logging.ConfigureLogging();
+        Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         var configure = Configure.With();
         configure.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
         configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));

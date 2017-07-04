@@ -5,23 +5,13 @@
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version6</DefineConstants>
     <OutputType>Exe</OutputType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="6.0.*" />
+    <ProjectReference Include="..\Common\Common.csproj" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Common\Asserter.cs">
-      <Link>Asserter.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\DataBusVerifier.cs">
-      <Link>DataBusVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\EndpointNames.cs">
-      <Link>EndpointNames.cs</Link>
-    </Compile>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
   </ItemGroup>
 </Project>

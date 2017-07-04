@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using NServiceBus;
 using NServiceBus.Features;
@@ -21,6 +20,7 @@ class Program
         Configure.GetEndpointNameAction = () => EndpointNames.EndpointName;
 
         Logging.ConfigureLogging();
+        Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         Configure.Features.Enable<Sagas>();
         Configure.Serialization.Json();
         var configure = Configure.With();
