@@ -23,6 +23,15 @@ public static class Initiator
                     Asserter.IsTrue(CustomEnum.Value2 == i, "Incorrect enum value");
                     Verifier.EnumReplyReceivedFrom.Add(remoteName);
                 });
+
+            bus.Send(remoteName, new ObjectMessage())
+                .Register(i =>
+                {
+                    var localResult = (CompletionResult)i.AsyncState;
+                    var response = (ObjectResponseMessage)localResult.Messages[0];
+                    Asserter.IsTrue("PropertyValue" == response.Property, "Incorrect object value");
+                    Verifier.ObjectReplyReceivedFrom.Add(remoteName);
+                }, null);
         });
     }
 }

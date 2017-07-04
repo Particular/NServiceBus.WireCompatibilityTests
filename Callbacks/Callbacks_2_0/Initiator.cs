@@ -21,6 +21,10 @@ public static class Initiator
                 var enumResult = bus.Request<CustomEnum>(new EnumMessage(), sendOptions).Result;
                 Asserter.IsTrue(CustomEnum.Value2 == enumResult, "Incorrect enum value");
                 Verifier.EnumReplyReceivedFrom.Add(remoteName);
+
+                var response = bus.Request<ObjectResponseMessage>(new ObjectMessage(), sendOptions).Result;
+                Asserter.IsTrue("PropertyValue" == response.Property, "Incorrect object value");
+                Verifier.ObjectReplyReceivedFrom.Add(remoteName);
             });
         }
     }
