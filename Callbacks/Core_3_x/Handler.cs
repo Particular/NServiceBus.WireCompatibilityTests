@@ -1,11 +1,10 @@
-﻿using CommonMessages;
-using NServiceBus;
+﻿using NServiceBus;
 
-public class Handler : IHandleMessages<SendReturnMessage>
+public class Handler : IHandleMessages<Message>
 {
     public IBus Bus { get; set; }
 
-    public void Handle(SendReturnMessage sendReturnMessage)
+    public void Handle(Message message)
     {
         Bus.Return(5);
     }

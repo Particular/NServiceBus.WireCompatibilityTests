@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
-public class Handler : IHandleMessages<SendReturnMessage>
+public class Handler : IHandleMessages<Message>
 {
-    public Task Handle(SendReturnMessage message, IMessageHandlerContext context)
+    public Task Handle(Message message, IMessageHandlerContext context)
     {
         return context.Reply(5);
     }

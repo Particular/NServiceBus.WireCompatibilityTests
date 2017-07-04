@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-public class SendReturnVerifier
+public class Verifier
 {
 
     public static void AssertExpectations()
