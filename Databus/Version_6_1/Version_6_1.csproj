@@ -16,14 +16,11 @@
     <Compile Include="..\Common\Asserter.cs">
       <Link>Asserter.cs</Link>
     </Compile>
-    <Compile Include="..\Common\DataBus\DataBusVerifier.cs">
-      <Link>DataBus\DataBusVerifier.cs</Link>
+    <Compile Include="..\Common\DataBusVerifier.cs">
+      <Link>DataBusVerifier.cs</Link>
     </Compile>
     <Compile Include="..\Common\EndpointNames.cs">
       <Link>EndpointNames.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\MessageConventions.cs">
-      <Link>MessageConventions.cs</Link>
     </Compile>
     <Compile Include="..\Version_6_0\DataBus\DataBusInitiator.cs">
       <Link>DataBus\DataBusInitiator.cs</Link>
@@ -41,7 +38,6 @@
       <Link>TestRunner.cs</Link>
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="PubSub\**" />

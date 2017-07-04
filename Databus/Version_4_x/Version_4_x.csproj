@@ -21,8 +21,8 @@
     <Compile Include="..\Common\DataBus\DataBusInitiator.cs">
       <Link>DataBus\\DataBusInitiator.cs</Link>
     </Compile>
-    <Compile Include="..\Common\DataBus\DataBusVerifier.cs">
-      <Link>DataBus\\DataBusVerifier.cs</Link>
+    <Compile Include="..\Common\DataBusVerifier.cs">
+      <Link>DataBusVerifier.cs</Link>
     </Compile>
     <Compile Include="..\Common\DataBus\ResponseHandler.cs">
       <Link>DataBus\\ResponseHandler.cs</Link>
@@ -33,11 +33,7 @@
     <Compile Include="..\Common\EndpointNames.cs">
       <Link>\EndpointNames.cs</Link>
     </Compile>
-    <Compile Include="..\Common\MessageConventions.cs">
-      <Link>\MessageConventions.cs</Link>
-    </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="PubSub\**" />
