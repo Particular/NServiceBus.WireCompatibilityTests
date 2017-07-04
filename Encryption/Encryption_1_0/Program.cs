@@ -26,16 +26,13 @@ class Program
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
         conventions.DefiningMessagesAs(MessageConventions.IsMessage);
-#pragma warning disable 618
-        conventions.DefiningEncryptedPropertiesAs(MessageConventions.IsEncryptedProperty);
-#pragma warning restore 618
 
         endpointConfiguration.DisableFeature<TimeoutManager>();
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
-        var recoverability = endpointConfiguration.Recoverability();
+        var recoverabilitySettings = endpointConfiguration.Recoverability();
 #pragma warning disable 618
-        recoverability.DisableLegacyRetriesSatellite();
+        recoverabilitySettings.DisableLegacyRetriesSatellite();
 #pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
@@ -63,10 +60,15 @@ class Program
         };
         var keyIdentifier = "20151014";
 
-        var conventions = endpointConfiguration.Conventions();
-#pragma warning disable 618
-        conventions.DefiningEncryptedPropertiesAs(p => p.Name.StartsWith("Encrypted"));
-        endpointConfiguration.RijndaelEncryptionService(keyIdentifier, encryptionKey, decryptionKeys);
-#pragma warning restore 618
+        var keys = new Dictionary<string, byte[]>
+        {
+            {keyIdentifier, encryptionKey}
+        };
+        var encryptionService = new NServiceBus.Encryption.MessageProperty.RijndaelEncryptionService(keyIdentifier, keys, decryptionKeys);
+
+        NServiceBus.Encryption.MessageProperty.EncryptionConfigurationExtensions.EnableMessagePropertyEncryption(
+            configuration: endpointConfiguration,
+            encryptionService: encryptionService,
+            encryptedPropertyConvention: MessageConventions.IsEncryptedProperty);
     }
 }

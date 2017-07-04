@@ -12,38 +12,8 @@
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="6.3.*" />
     <PackageReference Include="NServiceBus.Encryption.MessageProperty" Version="1.*" />
+    <ProjectReference Include="..\Common\Common.csproj" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Common\Asserter.cs">
-      <Link>Asserter.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\EndpointNames.cs">
-      <Link>EndpointNames.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\MessageConventions.cs">
-      <Link>MessageConventions.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReplyVerifier.cs">
-      <Link>SendReplyVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\EncryptionVerifier.cs">
-      <Link>EncryptionVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\FirstHandler.cs">
-      <Link>FirstHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\SecondHandler.cs">
-      <Link>SecondHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\SendReplyInitiator.cs">
-      <Link>SendReplyInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_6_0\TestRunner.cs">
-      <Link>TestRunner.cs</Link>
-    </Compile>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
   </ItemGroup>
 </Project>

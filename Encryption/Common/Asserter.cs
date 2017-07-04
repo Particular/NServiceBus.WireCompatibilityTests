@@ -5,11 +5,8 @@ using System.Linq;
 
 public static class Asserter
 {
-#if (Version5 || Version6 || Version7)
-    static NServiceBus.Logging.ILog log = NServiceBus.Logging.LogManager.GetLogger("Asserter");
-#else
-    static log4net.ILog log = log4net.LogManager.GetLogger("Asserter");
-#endif
+    public static Action<string> LogError;
+
 
     public static void IsTrue(bool value, string message)
     {
@@ -17,7 +14,7 @@ public static class Asserter
         {
             return;
         }
-        log.Error($"VERIFICATION-FAILED: {message}");
+        LogError($"VERIFICATION-FAILED: {message}");
         if (Debugger.IsAttached)
         {
             throw new Exception(message);

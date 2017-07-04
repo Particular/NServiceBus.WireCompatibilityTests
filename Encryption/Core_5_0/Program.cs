@@ -12,9 +12,12 @@ public class Program
 
     static IBus CreateBus()
     {
+        Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
         var busConfiguration = new BusConfiguration();
         busConfiguration.EndpointName(EndpointNames.EndpointName);
-        busConfiguration.Conventions().ApplyMessageConventions();
+        var conventions = busConfiguration.Conventions();
+        conventions.DefiningMessagesAs(MessageConventions.IsMessage);
+        conventions.DefiningEncryptedPropertiesAs(MessageConventions.IsEncryptedProperty);
         busConfiguration.UseSerialization<JsonSerializer>();
         busConfiguration.UseTransport<MsmqTransport>();
         busConfiguration.UsePersistence<InMemoryPersistence>();

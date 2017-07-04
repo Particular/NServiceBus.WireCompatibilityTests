@@ -21,10 +21,12 @@ public class Program
         Configure.GetEndpointNameAction = () => EndpointNames.EndpointName;
 
         Logging.ConfigureLogging();
+        Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         Configure.Features.Disable<TimeoutManager>();
         Configure.Serialization.Json();
         var configure = Configure.With();
-        configure.ApplyMessageConventions();
+        configure.DefiningMessagesAs(MessageConventions.IsMessage);
+        configure.DefiningEncryptedPropertiesAs(MessageConventions.IsEncryptedProperty);
         configure.DefaultBuilder();
         configure.UseTransport<Msmq>();
         configure.RijndaelEncryptionService();

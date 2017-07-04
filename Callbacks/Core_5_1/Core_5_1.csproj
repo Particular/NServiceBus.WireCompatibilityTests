@@ -14,8 +14,6 @@
     <Compile Include="..\Core_5_0\*.cs">
       <Link>%(Filename).cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>
