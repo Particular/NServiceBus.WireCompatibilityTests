@@ -1,17 +1,13 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
-namespace Common.SendReply
+public class SecondHandler : IHandleMessages<SecondMessage>
 {
-    public class SecondHandler : IHandleMessages<SendReplySecondMessage>
+    public Task Handle(SecondMessage message, IMessageHandlerContext context)
     {
-        public Task Handle(SendReplySecondMessage message, IMessageHandlerContext context)
-        {
-            SendReplyVerifier.SecondMessageReceivedFrom.Add(message.Sender);
-            Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
+        Verifier.SecondMessageReceivedFrom.Add(message.Sender);
+        Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
 
-            return Task.FromResult(0);
-        }
+        return Task.FromResult(0);
     }
 }

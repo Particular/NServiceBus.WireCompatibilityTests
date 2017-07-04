@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
 public static class SendReplyInitiator
@@ -8,7 +7,7 @@ public static class SendReplyInitiator
     {
         Parallel.ForEach(EndpointNames.All, endpointName =>
         {
-            bus.Send(endpointName, new SendReplyFirstMessage
+            bus.Send(endpointName, new FirstMessage
             {
                 Sender = EndpointNames.EndpointName,
                 EncryptedProperty = "Secret"

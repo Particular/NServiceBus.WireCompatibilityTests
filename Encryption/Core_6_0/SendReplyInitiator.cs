@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using CommonMessages;
 using NServiceBus;
 
 public static class SendReplyInitiator
@@ -8,7 +7,7 @@ public static class SendReplyInitiator
     {
         foreach (var endpoint in EndpointNames.All)
         {
-            await bus.Send(endpoint, new SendReplyFirstMessage
+            await bus.Send(endpoint, new FirstMessage
                 {
                     Sender = EndpointNames.EndpointName,
                     EncryptedProperty = "Secret"

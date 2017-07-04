@@ -6,12 +6,12 @@ public static class TestRunner
 {
     public static void RunTests(IBus bus)
     {
-        Thread.Sleep(TimeSpan.FromSeconds(25));
+        Thread.Sleep(TimeSpan.FromSeconds(10));
         bus.InitiateSendReply();
 
-        Thread.Sleep(TimeSpan.FromMinutes(2));
+        Thread.Sleep(TimeSpan.FromSeconds(10));
         var disposable = bus as IDisposable;
         disposable?.Dispose();
-        SendReplyVerifier.AssertExpectations();
+        Verifier.AssertExpectations();
     }
 }

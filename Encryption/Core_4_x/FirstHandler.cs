@@ -1,21 +1,17 @@
-﻿using CommonMessages;
-using NServiceBus;
+﻿using NServiceBus;
 
-namespace Common.SendReply
+public class FirstHandler : IHandleMessages<FirstMessage>
 {
-    public class FirstHandler : IHandleMessages<SendReplyFirstMessage>
-    {
-        public IBus Bus { get; set; }
+    public IBus Bus { get; set; }
 
-        public void Handle(SendReplyFirstMessage message)
+    public void Handle(FirstMessage message)
+    {
+        Verifier.FirstMessageReceivedFrom.Add(message.Sender);
+        Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
+        Bus.Reply(new SecondMessage
         {
-            SendReplyVerifier.FirstMessageReceivedFrom.Add(message.Sender);
-            Asserter.IsTrue("Secret" == message.EncryptedProperty, "Incorrect EncryptedProperty value");
-            Bus.Reply(new SendReplySecondMessage
-                {
-                    Sender = EndpointNames.EndpointName,
-                    EncryptedProperty = "Secret"
-                });
-        }
+            Sender = EndpointNames.EndpointName,
+            EncryptedProperty = "Secret"
+        });
     }
 }
