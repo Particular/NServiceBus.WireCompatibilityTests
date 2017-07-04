@@ -15,7 +15,7 @@ class Program
         var busConfiguration = new BusConfiguration();
         busConfiguration.EndpointName(EndpointNames.EndpointName);
         var conventions = busConfiguration.Conventions();
-        conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        conventions.DefiningMessagesAs(MessageConventions.IsMessage);
         conventions.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
         busConfiguration.UseSerialization<JsonSerializer>();
         busConfiguration.UseTransport<MsmqTransport>();

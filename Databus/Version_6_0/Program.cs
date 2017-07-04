@@ -21,14 +21,14 @@ class Program
         Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
-        conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        conventions.DefiningMessagesAs(MessageConventions.IsMessage);
         conventions.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
 
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
-        var recoverabilitySettings = endpointConfiguration.Recoverability();
+        var recoverability = endpointConfiguration.Recoverability();
 #pragma warning disable 618
-        recoverabilitySettings.DisableLegacyRetriesSatellite();
+        recoverability.DisableLegacyRetriesSatellite();
 #pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();

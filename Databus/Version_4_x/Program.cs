@@ -24,7 +24,7 @@ class Program
         Configure.Features.Enable<Sagas>();
         Configure.Serialization.Json();
         var configure = Configure.With();
-        configure.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        configure.DefiningMessagesAs(MessageConventions.IsMessage);
         configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
         configure.DefaultBuilder();
         configure.UseTransport<Msmq>();

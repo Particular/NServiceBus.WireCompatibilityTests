@@ -5,34 +5,17 @@
     <PlatformTarget>x86</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version5</DefineConstants>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="5.2.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Common\Asserter.cs">
-      <Link>Asserter.cs</Link>
+    <Compile Include="..\Core_5_0\*.cs">
+      <Link>%(Filename).cs</Link>
     </Compile>
-    <Compile Include="..\Common\EndpointNames.cs">
-      <Link>EndpointNames.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\Handler.cs">
-      <Link>Handler.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReturnInitiator.cs">
-      <Link>SendReturnInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReturnVerifier.cs">
-      <Link>SendReturnVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\TestRunner.cs">
-      <Link>TestRunner.cs</Link>
-    </Compile>
-    <Compile Include="..\Core_5_0\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>

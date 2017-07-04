@@ -1,9 +1,11 @@
 using System.Threading.Tasks;
 using NServiceBus;
+using NServiceBus.Features;
 
 class Program
 {
-    static void Main()
+
+    public static void Main()
     {
         AsyncMain().GetAwaiter().GetResult();
     }
@@ -22,15 +24,19 @@ class Program
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
         conventions.DefiningMessagesAs(MessageConventions.IsMessage);
-        conventions.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
 
+        endpointConfiguration.DisableFeature<TimeoutManager>();
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
+        var recoverability = endpointConfiguration.Recoverability();
+#pragma warning disable 618
+        recoverability.DisableLegacyRetriesSatellite();
+#pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
-
-        endpointConfiguration.UseDataBus<FileShareDataBus>().BasePath(@"..\tempstorage");
-
+        // Required by callbacks to have each instance uniquely addressable
+        endpointConfiguration.MakeInstanceUniquelyAddressable("1");
+        endpointConfiguration.EnableCallbacks();
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);

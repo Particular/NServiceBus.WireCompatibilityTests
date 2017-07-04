@@ -23,22 +23,19 @@ class Program
         Asserter.LogError = NServiceBus.Logging.LogManager.GetLogger("Asserter").Error;
         var endpointConfiguration = new EndpointConfiguration(EndpointNames.EndpointName);
         var conventions = endpointConfiguration.Conventions();
-        conventions.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
+        conventions.DefiningMessagesAs(MessageConventions.IsMessage);
 
         endpointConfiguration.DisableFeature<TimeoutManager>();
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UseSerialization<JsonSerializer>();
-        var recoverabilitySettings = endpointConfiguration.Recoverability();
+        var recoverability = endpointConfiguration.Recoverability();
 #pragma warning disable 618
-        recoverabilitySettings.DisableLegacyRetriesSatellite();
+        recoverability.DisableLegacyRetriesSatellite();
 #pragma warning restore 618
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         // Required by callbacks to have each instance uniquely addressable
         endpointConfiguration.MakeInstanceUniquelyAddressable("1");
-#if (CallbacksV2)
-        endpointConfiguration.EnableCallbacks();
-#endif
         endpointConfiguration.EnableInstallers();
 
         return Endpoint.Start(endpointConfiguration);

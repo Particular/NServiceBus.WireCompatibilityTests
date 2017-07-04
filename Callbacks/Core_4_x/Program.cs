@@ -24,7 +24,7 @@ class Program
         Configure.Features.Disable<TimeoutManager>();
         Configure.Serialization.Json();
         var configure = Configure.With();
-        configure.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
+        configure.DefiningMessagesAs(MessageConventions.IsMessage);
         configure.DefaultBuilder();
         configure.UseTransport<Msmq>();
 

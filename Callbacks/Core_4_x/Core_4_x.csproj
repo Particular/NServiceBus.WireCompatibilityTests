@@ -5,33 +5,14 @@
     <PlatformTarget>x86</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version4</DefineConstants>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.3" />
     <PackageReference Include="NServiceBus" Version="4.*" />
     <PackageReference Include="NServiceBus.Interfaces" Version="4.*" />
+    <ProjectReference Include="..\Common\Common.csproj" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Common\Asserter.cs">
-      <Link>Asserter.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\EndpointNames.cs">
-      <Link>EndpointNames.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\Handler.cs">
-      <Link>Handler.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReturnInitiator.cs">
-      <Link>SendReturnInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReturnVerifier.cs">
-      <Link>SendReturnVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\TestRunner.cs">
-      <Link>TestRunner.cs</Link>
-    </Compile>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
   </ItemGroup>
 </Project>

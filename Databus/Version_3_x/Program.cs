@@ -21,7 +21,7 @@ class Program
         Logging.ConfigureLogging();
         Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         var configure = Configure.With();
-        configure.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("CommonMessages"));
+        configure.DefiningMessagesAs(MessageConventions.IsMessage);
         configure.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
         configure.DefaultBuilder();
         configure.MsmqTransport();

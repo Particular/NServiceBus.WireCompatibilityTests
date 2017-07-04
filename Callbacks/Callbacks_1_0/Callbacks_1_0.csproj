@@ -5,23 +5,13 @@
     <PlatformTarget>x86</PlatformTarget>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DefineConstants>$(DefineConstants);Version6</DefineConstants>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="6.*" />
-    <PackageReference Include="NServiceBus.Callbacks" Version="1.1.*" />
+    <PackageReference Include="NServiceBus.Callbacks" Version="1.0.*" />
+    <ProjectReference Include="..\Common\Common.csproj" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Common\Asserter.cs">
-      <Link>Asserter.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\EndpointNames.cs">
-      <Link>EndpointNames.cs</Link>
-    </Compile>
-    <Compile Include="..\Common\SendReturnVerifier.cs">
-      <Link>SendReturnVerifier.cs</Link>
-    </Compile>
-    <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
   </ItemGroup>
 </Project>

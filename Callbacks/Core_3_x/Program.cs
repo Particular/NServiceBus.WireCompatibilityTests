@@ -1,4 +1,3 @@
-using System.Reflection;
 using System.Threading;
 using NServiceBus;
 using NServiceBus.Installation.Environments;
@@ -23,7 +22,7 @@ class Program
         Asserter.LogError = log4net.LogManager.GetLogger("Asserter").Error;
         var configure = Configure.With();
         configure.DisableTimeoutManager();
-        configure.DefiningMessagesAs(t => t.Namespace != null && (t.Namespace.StartsWith("CommonMessages")));
+        configure.DefiningMessagesAs(MessageConventions.IsMessage);
         configure.DefaultBuilder();
         configure.MsmqTransport();
         configure.JsonSerializer();
