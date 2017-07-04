@@ -34,9 +34,6 @@
     <Compile Include="..\Common\MessageConventions.cs">
       <Link>\MessageConventions.cs</Link>
     </Compile>
-    <Compile Include="..\Common\TestRunner.cs">
-      <Link>\TestRunner.cs</Link>
-    </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
     <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
