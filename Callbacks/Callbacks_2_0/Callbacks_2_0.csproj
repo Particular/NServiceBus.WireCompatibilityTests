@@ -11,7 +11,5 @@
     <PackageReference Include="NServiceBus" Version="6.*" />
     <PackageReference Include="NServiceBus.Callbacks" Version="2.0.1-beta0001" />
     <ProjectReference Include="..\Common\Common.csproj" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>

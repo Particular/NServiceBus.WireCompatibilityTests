@@ -12,7 +12,5 @@
     <PackageReference Include="NServiceBus" Version="4.*" />
     <PackageReference Include="NServiceBus.Interfaces" Version="4.*" />
     <ProjectReference Include="..\Common\Common.csproj" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>
