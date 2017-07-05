@@ -8,12 +8,8 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="5.1.*" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
-    <Compile Include="..\Core_5_0\*.cs">
-      <Link>%(Filename).cs</Link>
-    </Compile>
+    <PackageReference Include="NServiceBus" Version="6.*" />
+    <PackageReference Include="NServiceBus.Callbacks" Version="1.*" />
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>
