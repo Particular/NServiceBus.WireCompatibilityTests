@@ -10,8 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="5.1.*" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Core_5_0\*.cs">
       <Link>%(Filename).cs</Link>
     </Compile>
