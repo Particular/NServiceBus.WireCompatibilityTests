@@ -76,10 +76,4 @@
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
     <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="DataBus\**" />
-    <EmbeddedResource Remove="DataBus\**" />
-    <None Remove="DataBus\**" />
-    <ProjectReference Remove="DataBus\**" />
-  </ItemGroup>
 </Project>
