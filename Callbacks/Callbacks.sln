@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_3_x", "Core_3_x\Core_3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_4_x", "Core_4_x\Core_4_x.csproj", "{36EAFDA9-DC55-4853-8EE1-99CC1307D8B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_5_2", "Core_5_2\Core_5_2.csproj", "{8B787F17-606E-45DC-B0ED-27FE76A1AC96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_5_x", "Core_5_x\Core_5_x.csproj", "{8B787F17-606E-45DC-B0ED-27FE76A1AC96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Callbacks_1_1", "Callbacks_1_1\Callbacks_1_1.csproj", "{3E3C33F8-34E8-4C1C-B3CB-9D09C7F23321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Callbacks_1_x", "Callbacks_1_x\Callbacks_1_x.csproj", "{3E3C33F8-34E8-4C1C-B3CB-9D09C7F23321}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Callbacks_2_0", "Callbacks_2_0\Callbacks_2_0.csproj", "{0C5DB6BE-C120-4078-B49A-C0CDB8E3A0DE}"
 EndProject
