@@ -10,8 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="5.0.*" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="Microsoft.CSharp" />
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>
