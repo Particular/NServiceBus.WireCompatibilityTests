@@ -9,8 +9,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.0.0-alpha*" />
-    <PackageReference Include="NServiceBus.Transport.Msmq" Version="1.0.0-alpha*" />
+    <PackageReference Include="NServiceBus" Version="7.0.0-*" />
+    <PackageReference Include="NServiceBus.Transport.Msmq" Version="1.0.0-*" />
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 </Project>
