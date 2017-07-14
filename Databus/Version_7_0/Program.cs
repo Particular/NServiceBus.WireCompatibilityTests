@@ -25,7 +25,7 @@ class Program
         conventions.DefiningDataBusPropertiesAs(p => p.Name.EndsWith("DataBus"));
 
         endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UseSerialization<JsonSerializer>();
+        endpointConfiguration.UseSerialization<NewtonsoftSerializer>();
         endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 

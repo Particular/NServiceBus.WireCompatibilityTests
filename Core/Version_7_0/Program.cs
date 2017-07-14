@@ -23,7 +23,7 @@ class Program
         conventions.ApplyMessageConventions();
 
         endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UseSerialization<JsonSerializer>();
+        endpointConfiguration.UseSerialization<NewtonsoftSerializer>();
         var transport = endpointConfiguration.UseTransport<MsmqTransport>();
         PubSubConfigOverride.RegisterPublishers(transport);
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
