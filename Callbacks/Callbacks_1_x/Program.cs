@@ -4,13 +4,7 @@ using NServiceBus.Features;
 
 class Program
 {
-
-    public static void Main()
-    {
-        AsyncMain().GetAwaiter().GetResult();
-    }
-
-    static async Task AsyncMain()
+    public static async Task Main()
     {
         var bus = await CreateBus()
             .ConfigureAwait(false);
@@ -40,5 +34,4 @@ class Program
 
         return Endpoint.Start(endpointConfiguration);
     }
-
 }
