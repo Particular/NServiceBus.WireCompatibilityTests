@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.0.*" />
+    <PackageReference Include="NServiceBus" Version="6.4.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
