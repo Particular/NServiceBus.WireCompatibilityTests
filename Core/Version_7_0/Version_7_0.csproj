@@ -29,6 +29,12 @@
       <Link>SendReply\SendReplyVerifier.cs</Link>
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
+    <ProjectReference Include="..\Version_3_x.Messages\Version_3_x.Messages.csproj" />
+    <ProjectReference Include="..\Version_4_x.Messages\Version_4_x.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_0.Messages\Version_5_0.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_1.Messages\Version_5_1.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_2.Messages\Version_5_2.Messages.csproj" />
+    <ProjectReference Include="..\Version_6_4.Messages\Version_6_4.Messages.csproj" />
+    <ProjectReference Include="..\Version_7_0.Messages\Version_7_0.Messages.csproj" />
   </ItemGroup>
 </Project>

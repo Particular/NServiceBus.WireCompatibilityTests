@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.1.*" />
+    <PackageReference Include="NServiceBus" Version="6.4.*" />
     <Reference Include="System.Configuration" />
     <Reference Include="Microsoft.CSharp" />
     <Compile Include="..\Common\Asserter.cs">
@@ -66,6 +66,12 @@
       <Link>TestRunner.cs</Link>
     </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
+    <ProjectReference Include="..\Version_3_x.Messages\Version_3_x.Messages.csproj" />
+    <ProjectReference Include="..\Version_4_x.Messages\Version_4_x.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_0.Messages\Version_5_0.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_1.Messages\Version_5_1.Messages.csproj" />
+    <ProjectReference Include="..\Version_5_2.Messages\Version_5_2.Messages.csproj" />
+    <ProjectReference Include="..\Version_6_4.Messages\Version_6_4.Messages.csproj" />
+    <ProjectReference Include="..\Version_7_0.Messages\Version_7_0.Messages.csproj" />
   </ItemGroup>
 </Project>
