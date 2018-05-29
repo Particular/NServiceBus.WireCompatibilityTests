@@ -33,17 +33,18 @@ public class EventHandler :
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
         return Task.FromResult(0);
     }
+
     public Task Handle(Version_5_2.Messages.MyEvent message, IMessageHandlerContext context)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
         return Task.FromResult(0);
     }
-    
     public Task Handle(Version_6_4.Messages.MyEvent message, IMessageHandlerContext context)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
         return Task.FromResult(0);
     }
+
     public Task Handle(Version_7_0.Messages.MyEvent message, IMessageHandlerContext context)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);

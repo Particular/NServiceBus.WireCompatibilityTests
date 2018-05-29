@@ -26,52 +26,7 @@
     <Compile Include="..\Common\SendReply\SendReplyVerifier.cs">
       <Link>SendReply\SendReplyVerifier.cs</Link>
     </Compile>
-    <Compile Include="..\Version_6_0\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\PubSub\EventHandler.cs">
-      <Link>PubSub\EventHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\PubSub\PubSubConfigOverride.cs">
-      <Link>PubSub\PubSubConfigOverride.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\PubSub\PubSubInitiator.cs">
-      <Link>PubSub\PubSubInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\Saga\RequestingSaga.cs">
-      <Link>Saga\RequestingSaga.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\Saga\RequestingSagaData.cs">
-      <Link>Saga\RequestingSagaData.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\Saga\RespondingSaga.cs">
-      <Link>Saga\RespondingSaga.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\Saga\RespondingSagaData.cs">
-      <Link>Saga\RespondingSagaData.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\Saga\SagaInitiator.cs">
-      <Link>Saga\SagaInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\SendReply\FirstHandler.cs">
-      <Link>SendReply\FirstHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\SendReply\SecondHandler.cs">
-      <Link>SendReply\SecondHandler.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\SendReply\SendReplyInitiator.cs">
-      <Link>SendReply\SendReplyInitiator.cs</Link>
-    </Compile>
-    <Compile Include="..\Version_6_0\TestRunner.cs">
-      <Link>TestRunner.cs</Link>
-    </Compile>
     <ProjectReference Include="..\CommonMessages\CommonMessages.csproj" />
-    <ProjectReference Include="..\Version_3_x.Messages\Version_3_x.Messages.csproj" />
-    <ProjectReference Include="..\Version_4_x.Messages\Version_4_x.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_0.Messages\Version_5_0.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_1.Messages\Version_5_1.Messages.csproj" />
-    <ProjectReference Include="..\Version_5_2.Messages\Version_5_2.Messages.csproj" />
-    <ProjectReference Include="..\Version_6_4.Messages\Version_6_4.Messages.csproj" />
-    <ProjectReference Include="..\Version_7_0.Messages\Version_7_0.Messages.csproj" />
+    <ProjectReference Include="..\*.Messages\*.Messages.csproj" />
   </ItemGroup>
 </Project>

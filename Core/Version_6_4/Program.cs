@@ -3,7 +3,7 @@ using NServiceBus;
 
 class Program
 {
-    static async Task Main()
+    public static async Task Main()
     {
         var bus = await CreateBus()
             .ConfigureAwait(false);
@@ -18,9 +18,12 @@ class Program
         conventions.ApplyMessageConventions();
 
         endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UseSerialization<NewtonsoftSerializer>();
-        var transport = endpointConfiguration.UseTransport<MsmqTransport>();
-        PubSubConfigOverride.RegisterPublishers(transport);
+        endpointConfiguration.UseSerialization<JsonSerializer>();
+        var recoverabilitySettings = endpointConfiguration.Recoverability();
+#pragma warning disable 618
+        recoverabilitySettings.DisableLegacyRetriesSatellite();
+#pragma warning restore 618
+        endpointConfiguration.UseTransport<MsmqTransport>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
 
         endpointConfiguration.EnableInstallers();

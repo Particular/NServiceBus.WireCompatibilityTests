@@ -1,4 +1,4 @@
-﻿namespace Version_6_3.Messages
+﻿namespace Version_6_4.Messages
 {
     public class MyEvent
     {
