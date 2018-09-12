@@ -11,7 +11,10 @@ public class EventHandler :
     IHandleMessages<Version_6_1.Messages.MyEvent>,
     IHandleMessages<Version_6_2.Messages.MyEvent>,
     IHandleMessages<Version_6_3.Messages.MyEvent>,
-    IHandleMessages<Version_7_0.Messages.MyEvent>
+    IHandleMessages<Version_6_4.Messages.MyEvent>,
+    IHandleMessages<Version_6_5.Messages.MyEvent>,
+    IHandleMessages<Version_7_0.Messages.MyEvent>,
+    IHandleMessages<Version_7_1.Messages.MyEvent>
 {
     public Task Handle(Version_3_x.Messages.MyEvent message, IMessageHandlerContext context)
     {
@@ -67,7 +70,25 @@ public class EventHandler :
         return Task.FromResult(0);
     }
 
+    public Task Handle(Version_6_4.Messages.MyEvent message, IMessageHandlerContext context)
+    {
+        PubSubVerifier.EventReceivedFrom.Add(message.Sender);
+        return Task.FromResult(0);
+    }
+
+    public Task Handle(Version_6_5.Messages.MyEvent message, IMessageHandlerContext context)
+    {
+        PubSubVerifier.EventReceivedFrom.Add(message.Sender);
+        return Task.FromResult(0);
+    }
+
     public Task Handle(Version_7_0.Messages.MyEvent message, IMessageHandlerContext context)
+    {
+        PubSubVerifier.EventReceivedFrom.Add(message.Sender);
+        return Task.FromResult(0);
+    }
+
+    public Task Handle(Version_7_1.Messages.MyEvent message, IMessageHandlerContext context)
     {
         PubSubVerifier.EventReceivedFrom.Add(message.Sender);
         return Task.FromResult(0);
